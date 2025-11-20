@@ -187,8 +187,26 @@ textarea {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.03em;
+  color: #1f2b2f;
+}
+
+.logo__mark {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  display: block;
+  object-fit: contain;
+  border-radius: 0;
+}
+
+.logo__text {
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
 }
 
 .nav {
