@@ -1,0 +1,88 @@
+@use "sass:color";
+@use "./variables" as *;
+
+.section-heading {
+  margin-bottom: $space-6;
+  max-width: 760px;
+  display: grid;
+  gap: $space-3;
+  position: relative;
+}
+
+.section-heading::after {
+  content: "";
+  width: 64px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, color.adjust($green, $lightness: 6%), color.adjust($accent, $lightness: -2%));
+  display: block;
+}
+
+.cards {
+  display: grid;
+  gap: $space-5;
+}
+
+.card {
+  background: $card;
+  border: 1px solid rgba(31, 43, 47, 0.08);
+  border-radius: $radius;
+  padding: $space-5;
+  box-shadow: 0 10px 30px rgba(31, 43, 47, 0.08);
+  backdrop-filter: blur(5px);
+  transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.45s ease, border-color 0.35s ease, background 0.45s ease;
+  display: grid;
+  gap: $space-3;
+  height: 100%;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: $radius;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(31, 43, 47, 0.12);
+  border-color: rgba(216, 170, 90, 0.3);
+  background: color.mix($card, rgba(216, 170, 90, 0.12), 75%);
+}
+
+.card--icon {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: $space-3;
+  align-items: start;
+}
+
+.card--icon svg {
+  width: 40px;
+  height: 40px;
+  color: $green;
+}
+
+.card--highlight {
+  background: linear-gradient(135deg, rgba(47, 109, 74, 0.12), rgba(216, 170, 90, 0.12));
+  border-color: rgba(47, 109, 74, 0.28);
+}
+
+.card--highlight:hover,
+.card--highlight:focus-within {
+  background: linear-gradient(135deg, rgba(216, 170, 90, 0.2), rgba(47, 109, 74, 0.2));
+}
+
+.card--ghost {
+  background: transparent;
+  border-style: dashed;
+}
+
+.list {
+  color: $muted;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: $space-2;
+}

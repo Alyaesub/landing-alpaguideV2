@@ -1,0 +1,9 @@
+@use "./mixins" as *;
+
+.users {
+  @include section-spacing;
+}
+
+.users__grid {
+  align-items: center;
+}

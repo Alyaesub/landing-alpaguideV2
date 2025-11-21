@@ -1,0 +1,55 @@
+@use "sass:color";
+@use "./variables" as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-2;
+  padding: $space-3 $space-5;
+  border-radius: $radius;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, color.adjust($green, $lightness: 6%), color.adjust($green, $lightness: -2%));
+  color: white;
+  box-shadow: 0 10px 24px rgba(47, 109, 74, 0.18);
+}
+
+.btn--secondary {
+  background: transparent;
+  color: $text;
+  border-color: rgba(31, 43, 47, 0.22);
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(216, 170, 90, 0.2);
+}
+
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  background: linear-gradient(135deg, color.adjust($accent, $lightness: 6%), color.adjust($green, $lightness: 8%));
+  color: $text;
+}
+
+.btn--secondary:hover,
+.btn--secondary:focus-visible {
+  background: rgba(216, 170, 90, 0.14);
+  border-color: color.adjust($accent, $lightness: -5%);
+}
+
+.btn:focus-visible,
+.nav__toggle:focus-visible,
+.faq__question:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid color.adjust($blue, $lightness: 8%);
+  outline-offset: 3px;
+}

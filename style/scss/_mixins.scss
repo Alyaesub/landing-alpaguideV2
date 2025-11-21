@@ -1,0 +1,14 @@
+@use "sass:map";
+@use "./variables" as *;
+
+@mixin respond($bp) {
+  @if map.has-key($breakpoints, $bp) {
+    @media (min-width: map.get($breakpoints, $bp)) {
+      @content;
+    }
+  }
+}
+
+@mixin section-spacing {
+  padding: $space-8 0;
+}

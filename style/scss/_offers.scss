@@ -1,0 +1,12 @@
+@use "./mixins" as *;
+@use "./variables" as *;
+
+.offers {
+  @include section-spacing;
+  background: radial-gradient(circle at 30% 20%, rgba(60, 86, 111, 0.12), transparent 35%),
+    radial-gradient(circle at 80% 40%, rgba(47, 109, 74, 0.15), transparent 35%);
+}
+
+.offers__grid ul {
+  list-style: disc;
+}

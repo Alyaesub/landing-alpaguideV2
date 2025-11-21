@@ -1,0 +1,61 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.container {
+  width: min(1180px, 92vw);
+  margin: 0 auto;
+}
+
+.grid-1 {
+  display: grid;
+  gap: $space-5;
+}
+
+.grid-2 {
+  display: grid;
+  gap: $space-7;
+}
+
+.grid-3 {
+  display: grid;
+  gap: $space-7;
+}
+
+.grid-3-lg {
+  @include respond(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.grid-2-md {
+  @include respond(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.grid-3-md {
+  @include respond(md) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.grid-1 + .grid-1,
+.grid-2 + .grid-2,
+.grid-3 + .grid-3 {
+  margin-top: $space-6;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  padding: $space-3 $space-4;
+  background: $green;
+  color: white;
+  border-radius: $radius;
+  z-index: 20;
+}
+
+.skip-link:focus {
+  left: $space-4;
+  top: $space-4;
+}

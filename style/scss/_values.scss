@@ -1,0 +1,7 @@
+@use "./mixins" as *;
+@use "./variables" as *;
+
+.values {
+  @include section-spacing;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+}

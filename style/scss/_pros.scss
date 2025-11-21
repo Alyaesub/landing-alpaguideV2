@@ -1,0 +1,9 @@
+@use "./mixins" as *;
+
+.pros {
+  @include section-spacing;
+}
+
+.pros__grid {
+  align-items: center;
+}

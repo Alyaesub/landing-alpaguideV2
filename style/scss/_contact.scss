@@ -1,0 +1,18 @@
+@use "./mixins" as *;
+@use "./variables" as *;
+
+.contact {
+  @include section-spacing;
+}
+
+.socials {
+  display: flex;
+  gap: $space-3;
+  align-items: center;
+}
+
+.socials svg {
+  width: 28px;
+  height: 28px;
+  color: $text;
+}

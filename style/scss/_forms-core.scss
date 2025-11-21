@@ -1,0 +1,36 @@
+@use "./variables" as *;
+
+.form {
+  display: grid;
+  gap: $space-3;
+  background: rgba(255, 255, 255, 0.85);
+  padding: $space-4;
+  border-radius: $radius;
+  box-shadow: 0 10px 28px rgba(31, 43, 47, 0.08);
+}
+
+.form__group {
+  display: grid;
+  gap: $space-2;
+}
+
+label {
+  color: $text;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: $space-3;
+  border-radius: $radius;
+  border: 1px solid rgba(31, 43, 47, 0.15);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.form__feedback {
+  min-height: 1.5rem;
+  margin: 0;
+  font-weight: 600;
+}

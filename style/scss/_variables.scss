@@ -1,0 +1,28 @@
+@use "sass:color";
+@use "sass:map";
+
+$green: #2f6d4a;
+$blue: #3c566f;
+$accent: #d8aa5a;
+$bg: #f6f2e9;
+$mist: #eef2ec;
+$text: #1f2b2f;
+$muted: #5b6b73;
+$card: rgba(255, 255, 255, 0.9);
+$card-strong: rgba(255, 255, 255, 0.95);
+$radius: 14px;
+$shadow: 0 12px 36px rgba(31, 43, 47, 0.16);
+$space-1: 0.25rem;
+$space-2: 0.5rem;
+$space-3: 0.75rem;
+$space-4: 1rem;
+$space-5: 1.5rem;
+$space-6: 2rem;
+$space-7: 3rem;
+$space-8: 4rem;
+
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 1024px
+);

@@ -1,0 +1,37 @@
+@use "./mixins" as *;
+@use "./variables" as *;
+
+.cta {
+  @include section-spacing;
+  background: linear-gradient(135deg, rgba(43, 108, 176, 0.2), rgba(46, 125, 50, 0.25));
+  border-top: 1px solid rgba(31, 43, 47, 0.08);
+  border-bottom: 1px solid rgba(31, 43, 47, 0.08);
+}
+
+.cta__inner {
+  display: grid;
+  gap: $space-4;
+  align-items: center;
+}
+
+@include respond(md) {
+  .cta__inner {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.cta__form {
+  display: grid;
+  gap: $space-3;
+  grid-template-columns: 1fr auto;
+}
+
+.cta__form input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.cta__form .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}

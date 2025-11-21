@@ -1,0 +1,9 @@
+@use "./mixins" as *;
+
+.steps {
+  @include section-spacing;
+}
+
+.steps__grid .card {
+  position: relative;
+}
