@@ -1,0 +1,43 @@
+@use "sass:color";
+@use "./mixins" as *;
+@use "./variables" as *;
+
+.forms {
+  @include section-spacing;
+  background: radial-gradient(circle at 24% 18%, rgba(29, 53, 87, 0.14), transparent 32%),
+    radial-gradient(circle at 82% 10%, rgba(45, 106, 79, 0.18), transparent 28%);
+}
+
+.forms__grid {
+  align-items: center;
+  gap: $space-6;
+}
+
+.link-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: $space-3;
+}
+
+.link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-3;
+  padding: $space-3 $space-4;
+  border: 1px solid rgba(31, 43, 47, 0.2);
+  border-radius: $radius;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.link-btn:hover,
+.link-btn:focus-visible {
+  transform: translateY(-2px);
+  border-color: color.adjust($accent, $lightness: -5%);
+  box-shadow: 0 10px 24px rgba(216, 170, 90, 0.2);
+}
+
+.card--forms {
+  box-shadow: 0 12px 32px rgba(47, 109, 74, 0.22);
+}

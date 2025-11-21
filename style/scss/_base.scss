@@ -1,0 +1,77 @@
+@use "sass:color";
+@use "./variables" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at 16% 18%, rgba(47, 109, 74, 0.08), transparent 28%),
+    radial-gradient(circle at 82% 12%, rgba(60, 86, 111, 0.08), transparent 24%),
+    linear-gradient(180deg, #fbf8f1, $bg 60%, #f1ede4);
+  color: $text;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  color: color.adjust($blue, $lightness: 10%);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: $radius;
+  display: block;
+}
+
+h1, h2, h3, h4 {
+  color: $text;
+  margin: 0 0 $space-3;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 2.6vw + 1rem, 3.6rem);
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: clamp(1.7rem, 1.4vw + 1rem, 2.6rem);
+  letter-spacing: -0.005em;
+}
+
+h3 {
+  font-size: clamp(1.2rem, 0.6vw + 1rem, 1.6rem);
+}
+
+p {
+  margin: 0 0 $space-4;
+  color: $muted;
+}
+
+ul {
+  padding-left: 1.1rem;
+  margin: 0 0 $space-4;
+  color: $muted;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: $text;
+}

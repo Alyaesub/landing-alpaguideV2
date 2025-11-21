@@ -1,0 +1,17 @@
+@use "sass:color";
+@use "./mixins" as *;
+@use "./variables" as *;
+
+.why {
+  @include section-spacing;
+}
+
+.why__grid {
+  align-items: start;
+}
+
+.conclusion {
+  font-weight: 700;
+  color: color.adjust($green, $lightness: 10%);
+  margin-top: $space-3;
+}

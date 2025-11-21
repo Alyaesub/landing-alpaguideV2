@@ -1,0 +1,24 @@
+@use "sass:color";
+@use "./mixins" as *;
+@use "./variables" as *;
+
+.testimonials {
+  @include section-spacing;
+}
+
+.testimonials blockquote {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.testimonials cite {
+  display: block;
+  margin-top: $space-3;
+  color: color.adjust($muted, $lightness: 15%);
+}
+
+.rating {
+  color: color.adjust($green, $lightness: 5%);
+  font-weight: 700;
+}

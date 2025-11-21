@@ -1,0 +1,51 @@
+@use "./mixins" as *;
+@use "./variables" as *;
+
+.faq {
+  @include section-spacing;
+}
+
+.faq__list {
+  display: grid;
+  gap: $space-3;
+}
+
+.faq__item {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: $radius;
+  overflow: hidden;
+}
+
+.faq__question {
+  width: 100%;
+  text-align: left;
+  background: $card-strong;
+  color: $text;
+  border: none;
+  padding: $space-4;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq__question::after {
+  content: "+";
+  color: $muted;
+}
+
+.faq__question[aria-expanded="true"]::after {
+  content: "−";
+}
+
+.faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 $space-4;
+}
+
+.faq__item.is-open .faq__answer {
+  padding-bottom: $space-4;
+  max-height: 200px;
+}

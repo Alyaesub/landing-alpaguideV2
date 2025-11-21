@@ -1,0 +1,46 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.hero {
+  padding: $space-8 0 $space-8;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero__grid {
+  display: grid;
+  gap: $space-6;
+}
+
+.hero__content {
+  display: grid;
+  gap: $space-5;
+  max-width: 640px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: $space-3;
+  flex-wrap: wrap;
+}
+
+.hero__keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+}
+
+.hero__visual img {
+  box-shadow: $shadow;
+  object-fit: cover;
+  height: 100%;
+  border: 1px solid rgba(31, 43, 47, 0.08);
+}
+
+@include respond(md) {
+  .hero__grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+  }
+}
