@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alpaguide | Guides de montagne qui vous ressemblent</title>
-  <meta name="description" content="Alpaguide relie guides, accompagnateurs et passionnés de montagne avec des clients partageant leurs valeurs, leurs envies et leur niveau.">
-  <meta property="og:title" content="Alpaguide | Guides de montagne qui vous ressemblent">
-  <meta property="og:description" content="Une plateforme humaine pour rencontrer des pros de la montagne alignés avec vos valeurs.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://alpaguide-placeholder.com">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%232b6cb0' d='M4 48l16-32 12 20 8-12 20 24z'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="style/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- TITLE -->
+  <title>Alpaguide – Trouvez un guide de montagne local et humain, aligné avec vos valeurs</title>
+  <!-- DESCRIPTION SEO -->
+  <meta name="description" content="Alpaguide met en relation randonneurs et professionnels de la montagne selon leurs valeurs, leur approche et leur territoire. Une plateforme simple, humaine et locale." />
+  <!-- KEYWORDS (optionnel mais OK pour ton cas) -->
+  <meta name="keywords" content="guide de montagne, accompagnateur, AMM, moniteur ski, randonnée, alpinisme, VTT, escalade, sorties montagne, guides locaux, montagne, activités outdoor" />
+  <!-- CANONICAL -->
+  <link rel="canonical" href="https://alpaguide.fr" />
+  <!-- OPEN GRAPH (Facebook, LinkedIn, etc.) -->
+  <meta property="og:title" content="Alpaguide – Trouvez un guide de montagne qui vous ressemble" />
+  <meta property="og:description" content="Une plateforme humaine, locale et transparente pour rencontrer des professionnels de la montagne alignés avec vos valeurs." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alpaguide.fr" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <!-- TWITTER CARD -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Alpaguide – Guides de montagne qui vous ressemblent" />
+  <meta name="twitter:description" content="Trouvez un professionnel de montagne qui partage vos valeurs, votre style et votre vision." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" />
+  <!-- FAVICON -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%232b6cb0' d='M4 48l16-32 12 20 8-12 20 24z'/%3E%3C/svg%3E" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="style/styles.css" />
 </head>
+
 <body class="theme-forest">
   <header class="header" id="top">
     <div class="container header__inner">
@@ -27,10 +44,16 @@
         <span class="nav__toggle-line" aria-hidden="true"></span>
       </button>
       <nav class="nav" id="primary-nav" aria-label="Navigation principale">
+        <button class="nav__close" type="button" aria-label="Fermer le menu">
+          <span aria-hidden="true">×</span>
+        </button>
         <ul class="nav__list">
-          <li><a href="#fonctionnement">Fonctionnement</a></li>
+          <li><a href="#pourquoi">Pourquoi</a></li>
           <li><a href="#valeurs">Valeurs</a></li>
+          <li><a href="#fonctionnement">Fonctionnement</a></li>
           <li><a href="#offres">Offres</a></li>
+          <li><a href="#details-offres">Détails</a></li>
+          <li><a href="#resume-offres">Résumé</a></li>
           <li><a href="#temoignages">Témoignages</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -44,24 +67,29 @@
     <section class="hero" id="hero">
       <div class="container hero__grid">
         <div class="hero__content">
-          <p class="eyebrow">Humaine – Locale – Authentique – Simple – Fiable</p>
-          <h1>Trouvez un pro de la montagne qui vous ressemble.</h1>
-          <p class="lead">Alpaguide relie randonneurs, passionnés et amateurs de sport et pros de la montagne selon vos envies, votre niveau et vos valeurs.</p>
-          <p class="intro">Alpaguide est une application qui met en relation directe les guides, accompagnateurs et amoureux de la montagne avec des clients qui partagent leurs valeurs, leurs envies et leur esprit d’aventure.</p>
+          <p class="eyebrow">Humaine • Locale • Authentique • Simple • Fiable</p>
+          <h1>Trouvez un professionnel de la montagne qui vous ressemble.</h1>
+          <p class="lead">Alpaguide met en relation randonneurs, voyageurs et passionnés avec des pros de la montagne qui partagent leurs valeurs, leurs envies et leur façon de vivre la nature.</p>
+          <p class="intro">
+            Ici, pas d’algorithmes opaques ni de plateformes impersonnelles.  
+            Juste une mise en relation simple, directe et respectueuse entre vous et des professionnels locaux : guides, AMM, moniteurs (ski, VTT, escalade, parapente…), hébergeurs et artisans du territoire.  
+            Vous choisissez selon l’activité, le massif… mais aussi selon les valeurs, le style et la personnalité du pro.
+          </p>
           <div class="hero__actions">
             <a class="btn btn--primary" href="#beta">Rejoindre l’accès anticipé</a>
-            <a class="btn btn--secondary" href="#valeurs">Découvrir la vision</a>
+            <a class="btn btn--primary" href="#valeurs">Voir notre approche</a>
           </div>
           <div class="hero__keywords" aria-label="Mots-clés">
             <span class="tag">Authentique</span>
-            <span class="tag">Locale</span>
-            <span class="tag">Respect</span>
-            <span class="tag">Simplicité</span>
+            <span class="tag">Local</span>
+            <span class="tag">Respectueux</span>
+            <span class="tag">Simple</span>
+            <span class="tag">Humain</span>
             <span class="tag">Fiable</span>
           </div>
         </div>
         <div class="hero__visual" aria-label="Photo de montagne">
-          <img src="asset/IMG_2937 19.05.28.JPG" loading="lazy" alt="Guide de montagne au lever du soleil" />
+          <img src="asset/20230829_105017 - Copie (2).jpg" loading="lazy" alt="Guide de montagne au lever du soleil" />
         </div>
       </div>
     </section>
@@ -70,254 +98,619 @@
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">Vision</p>
-          <h2>Une plateforme humaine et locale</h2>
-          <p>Alpaguide veut redonner du sens à la rencontre entre passionnés et pros de la montagne. Pas d’algorithme flou, juste une vraie connexion humaine et locale.</p>
+          <h2>La montagne, à taille humaine</h2>
+          <p>
+            Alpaguide redonne du sens à la rencontre entre passionnés et professionnels de la montagne.
+            Ici, pas de mise en avant artificielle ou d’algorithme flou : seulement des profils vrais,
+            locaux, et une mise en relation simple, directe et respectueuse.
+          </p>
         </div>
         <div class="cards grid-2 grid-3-md">
           <article class="card">
-            <h3>Connexion humaine &amp; locale</h3>
-            <p>Filtrer par affinités, valeurs et territoire pour matcher au-delà du simple prix.</p>
+            <h3>Connexion humaine & locale</h3>
+            <p>
+              Trouvez un professionnel selon ses valeurs, son approche, son territoire.
+              Une vraie rencontre, pas seulement une réservation.
+            </p>
           </article>
           <article class="card">
-            <h3>Profils riches (valeurs, style, niveaux)</h3>
-            <p>Des fiches transparentes pour comprendre le style d’accompagnement avant de réserver.</p>
+            <h3>Profils transparents & riches</h3>
+            <p>
+              Bio, valeurs, style d’accompagnement, activités, niveau : tout pour choisir en confiance,
+              avant même le premier message.
+            </p>
           </article>
           <article class="card">
-            <h3>Autonomie pour les pros</h3>
-            <p>Freemium, abonnement ou commission : choisissez votre modèle et gardez la main.</p>
-          </article>
-          <article class="card">
-            <h3>Simplicité &amp; fiabilité</h3>
-            <p>Messagerie directe, rappels clairs, profils vérifiés et accompagnement si besoin.</p>
-          </article>
+        <h3>Liberté totale pour les pros</h3>
+        <p>
+          Guides, AMM, moniteurs, hébergeurs… chacun choisit son modèle : 
+          freemium, abonnement ou commission. Vous gardez la main sur votre activité.
+        </p>
+      </article>
+      <article class="card">
+        <h3>Simplicité & fiabilité</h3>
+        <p>
+          Messagerie directe, profils vérifiés, interface claire.
+          La mise en relation comme elle devrait toujours être : simple, fluide, sans friction.
+        </p>
+      </article>
         </div>
       </div>
     </section>
 
     <section class="values">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Valeurs</p>
-          <h2>Nos engagements</h2>
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Valeurs</p>
+      <h2>Nos engagements</h2>
+      <p class="section-intro">
+        Ce qui guide Alpaguide, c’est simple : remettre l’humain, le local et la confiance
+        au cœur de chaque rencontre en montagne.
+      </p>
+    </div>
+    <div class="cards grid-2 grid-3-md values__grid">
+      <article class="card card--icon">
+        <div>
+          <h3>Authenticité</h3>
+          <p>
+            Des rencontres vraies, des pros qui racontent leur histoire, pas un profil impersonnel.
+          </p>
         </div>
-        <div class="cards grid-2 grid-3-md values__grid">
-          <article class="card card--icon"><div><h3>Authenticité</h3><p>Des rencontres humaines, sans filtres.</p></div></article>
-          <article class="card card--icon"><div><h3>Proximité</h3><p>Des guides locaux, des expériences vraies.</p></div></article>
-          <article class="card card--icon"><div><h3>Respect</h3><p>De la nature, des territoires et des personnes.</p></div></article>
-          <article class="card card--icon"><div><h3>Simplicité</h3><p>Une mise en relation directe, sans plateforme froide.</p></div></article>
-          <article class="card card--icon"><div><h3>Partage</h3><p>Entre passionnés de montagne.</p></div></article>
+      </article>
+      <article class="card card--icon">
+        <div>
+          <h3>Proximité</h3>
+          <p>
+            Des professionnels locaux, enracinés dans leur massif, leur territoire et leur culture.
+          </p>
         </div>
-      </div>
-    </section>
+      </article>
+      <article class="card card--icon">
+        <div>
+          <h3>Respect</h3>
+          <p>
+            De la nature, des saisons, des personnes et des métiers qui vivent la montagne au quotidien.
+          </p>
+        </div>
+      </article>
+      <article class="card card--icon">
+        <div>
+          <h3>Simplicité</h3>
+          <p>
+            Une mise en relation claire et directe. Pas de friction, pas de prise de tête, pas de détour.
+          </p>
+        </div>
+      </article>
+      <article class="card card--icon">
+        <div>
+          <h3>Partage</h3>
+          <p>
+            La montagne se transmet. Entre passionnés, entre générations, entre ceux qui l’aiment et ceux qui la font vivre.
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
     <section class="why" id="pourquoi">
-      <div class="container grid-2 grid-2-md why__grid">
-        <div>
-          <p class="eyebrow">Pourquoi ce projet</p>
-          <h2>Alpaguide, c’est la montagne à taille humaine.</h2>
-          <p> Aujourd’hui, trouver un guide peut vite devenir impersonnel et compliqué. Les plateformes généralistes lissent les profils et cachent l’essentiel : le lien de confiance. Alpaguide veut redonner du sens à cette rencontre.</p>
-        </div>
-        <div class="why__points">
-          <div class="card">
-            <h3>Les limites actuelles</h3>
-            <ul>
-              <li>Plateformes impersonnelles et algorithmes opaques.</li>
-              <li>Difficulté à évaluer l’alignement des valeurs et du style.</li>
-              <li>Peu de place pour l’humain et la relation directe.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>La réponse Alpaguide</h3>
-            <ul>
-              <li>Matching par valeurs, territoire et niveau réel.</li>
-              <li>Profils transparents, messagerie directe, accompagnement.</li>
-              <li>Choix du modèle économique clair et maîtrisé.</li>
-            </ul>
-          </div>
-          <p class="conclusion">Alpaguide, c’est la montagne à taille humaine.</p>
-        </div>
+  <div class="container grid-2 grid-2-md why__grid">
+    <div>
+      <p class="eyebrow">Pourquoi ce projet</p>
+      <h2>Alpaguide, c’est la montagne à taille humaine.</h2>
+      <p>
+        Aujourd’hui, trouver un professionnel de la montagne peut vite devenir froid et impersonnel.
+        Entre plateformes généralistes et profils standardisés, on perd l’essentiel : la confiance, l’affinité,
+        et le lien humain. Alpaguide est né pour remettre tout ça au centre.
+      </p>
+    </div>
+    <div class="why__points">
+      <div class="card">
+        <h3>Les limites actuelles</h3>
+        <ul>
+          <li>Profils impersonnels et algorithmes opaques.</li>
+          <li>Difficile d’évaluer les valeurs, le style ou l’approche du pro.</li>
+          <li>Peu de place pour l’humain, la discussion, la transmission.</li>
+        </ul>
       </div>
-    </section>
+      <div class="card">
+        <h3>La réponse Alpaguide</h3>
+        <ul>
+          <li>Matching par valeurs, territoire, activité et niveau réel.</li>
+          <li>Profils complets : bio, approche, photos, activités, valeurs.</li>
+          <li>Messagerie directe simple et respectueuse.</li>
+          <li>Modèle économique clair : freemium, abonnement ou commission.</li>
+        </ul>
+      </div>
+      <p class="conclusion">
+        Alpaguide remet l’humain et la confiance au cœur de la montagne.
+      </p>
+    </div>
+  </div>
+</section>
 
     <section class="steps" id="fonctionnement">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Fonctionnement</p>
-          <h2>3 étapes pour trouver votre guide</h2>
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Fonctionnement</p>
+      <h2>3 étapes pour trouver le bon professionnel</h2>
+      <p class="section-intro">
+        Simple, direct, humain. Alpaguide vous aide à rencontrer le pro qui correspond vraiment à vos envies, votre niveau et vos valeurs.
+      </p>
+    </div>
+    <div class="cards grid-1 grid-3-md steps__grid">
+      <article class="card card--icon">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M12 3l7 4v6c0 5-7 8-7 8s-7-3-7-8V7l7-4z" fill="currentColor" opacity="0.15"/>
+          <path d="M12 3l7 4-7 4-7-4 7-4zm7 4v6c0 5-7 8-7 8s-7-3-7-8V7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <h3>1. Choisissez vos envies</h3>
+          <p>
+            Rando, alpi, ski, VTT, escalade… précisez votre activité,
+            votre niveau et le rythme que vous souhaitez.
+          </p>
         </div>
-        <div class="cards grid-1 grid-3-md steps__grid">
-          <article class="card card--icon">
-            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3l7 4v6c0 5-7 8-7 8s-7-3-7-8V7l7-4z" fill="currentColor" opacity="0.15"/><path d="M12 3l7 4-7 4-7-4 7-4zm7 4v6c0 5-7 8-7 8s-7-3-7-8V7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <div><h3>1. Définissez vos envies et votre niveau</h3><p>Rando, alpi, ski ou escalade, précisez vos attentes et votre rythme.</p></div>
-          </article>
-          <article class="card card--icon">
-            <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4" fill="currentColor" opacity="0.15"/><path d="M3 21c1-4 4.5-6 9-6s8 2 9 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M8 9h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            <div><h3>2. Explorez des profils alignés</h3><p>Valeurs, style, spécialités, niveaux : trouvez la bonne affinité rapidement.</p></div>
-          </article>
-          <article class="card card--icon">
-            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 5h12a1 1 0 011 1v12a1 1 0 01-1 1H6a1 1 0 01-1-1V6a1 1 0 011-1z" fill="currentColor" opacity="0.15"/><path d="M12 12l-6-5h12l-6 5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M6 7l6 5 6-5m-10 9h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <div><h3>3. Contact direct &amp; réservation simplifiée</h3><p>Échangez, réservez, confirmez. Une relation claire et directe.</p></div>
-          </article>
+      </article>
+      <article class="card card--icon">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <circle cx="12" cy="7" r="4" fill="currentColor" opacity="0.15"/>
+          <path d="M3 21c1-4 4.5-6 9-6s8 2 9 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M8 9h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <h3>2. Explorez des profils qui vous ressemblent</h3>
+          <p>
+            Valeurs, style, territoire, spécialités : trouvez le pro avec qui
+            vous aurez vraiment envie de partir.
+          </p>
         </div>
-      </div>
-    </section>
+      </article>
+      <article class="card card--icon">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M6 5h12a1 1 0 011 1v12a1 1 0 01-1 1H6a1 1 0 01-1-1V6a1 1 0 011-1z" fill="currentColor" opacity="0.15"/>
+          <path d="M12 12l-6-5h12l-6 5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M6 7l6 5 6-5m-10 9h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <h3>3. Contactez & réservez en direct</h3>
+          <p>
+            Discutez, posez vos questions, organisez la sortie.
+            Une relation claire et directe, sans intermédiaire froid.
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
-    <section class="gallery" aria-label="Moments Alpaguide">
-      <div class="container gallery__grid grid-1 grid-2-md">
+    <section class="gallery gallery--fullwidth" aria-label="Moments Alpaguide">
+      <div class="container gallery__grid grid-1">
         <figure class="gallery__item gallery__item--focus-top">
-          <img src="asset/IMG_2942%2019.05.28.JPG" loading="lazy" alt="Guide et randonneur au lever du soleil en montagne">
+          <img src="asset/1000005138.jpg" loading="lazy" alt="Guide et randonneur au lever du soleil en montagne">
         </figure>
-        <figure class="gallery__item gallery__item--top">
-          <img src="asset/IMG_2939%2019.05.28.JPG" loading="lazy" alt="Sommet enneigé vu depuis le sentier">
-        </figure>
-
       </div>
     </section>
+
+    <section class="offer-details" id="details-offres">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Détails des offres</p>
+      <h2>Comprenez en 2 minutes nos 3 modèles</h2>
+      <p>
+        On a conçu un système flexible à partir des retours des professionnels.
+        Vous choisissez : tester en Freemium, la sérénité avec l’abonnement, ou la commission + wallet 
+        pour payer uniquement quand vous travaillez.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="listening" id="retours-pros">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Vos retours</p>
+      <h2>On vous a écoutés.</h2>
+      <p>
+        Les guides nous ont partagé leurs besoins. Alpaguide réunit le meilleur des deux mondes :
+        liberté de tarif, choix entre abonnement ou commission, et une plateforme vraiment humaine.
+      </p>
+    </div>
+    <div class="cards grid-1 grid-2-md">
+      <article class="card">
+        <h3>Ce que vous nous avez dit</h3>
+        <ul>
+          <li>« Je veux être libre dans mon tarif. »</li>
+          <li>« Je veux choisir entre abonnement ou commission. »</li>
+          <li>« Je veux une plateforme humaine, pas une usine. »</li>
+        </ul>
+      </article>
+      <article class="card card--highlight">
+        <h3>Notre réponse</h3>
+        <p>
+          Alpaguide propose plusieurs offres pensées avec vous : tester en Freemium,
+          la tranquillité avec l’abonnement, ou la commission + wallet pour payer
+          seulement quand vous travaillez.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
 
     <section class="offers" id="offres">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Offres</p>
-          <h2>Choisissez le modèle qui vous convient</h2>
-        </div>
-        <div class="cards grid-1 grid-3-lg offers__grid">
-          <article class="card">
-            <h3>Freemium</h3>
-            <ul>
-              <li>Profil public visible</li>
-              <li>Messages limités</li>
-              <li>Visibilité de base</li>
-            </ul>
-          </article>
-          <article class="card card--highlight">
-            <h3>Abonnement</h3>
-            <ul>
-              <li>Profil avancé (valeurs, spécialités)</li>
-              <li>Visibilité renforcée</li>
-              <li>Outils pro dédiés</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Commission</h3>
-            <ul>
-              <li>Sans abonnement fixe</li>
-              <li>Commission sur réservation confirmée</li>
-              <li>Accompagnement client inclus</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Offres</p>
+      <h2>Choisissez le modèle qui vous convient</h2>
+    </div>
+    <div class="cards grid-1 grid-3-lg offers__grid">
+      <!-- FREEMIUM -->
+      <article class="card">
+        <h3>Freemium</h3>
+        <p>Idéal pour découvrir Alpaguide</p>
+        <ul>
+          <li>Profil public visible</li>
+          <li>1 seule activité</li>
+          <li>Contact partiellement masqué</li>
+          <li>Messages limités</li>
+          <li>Pas de calendrier</li>
+          <li>Pas de statistiques</li>
+          <li>Parfait pour se lancer, tester, se présenter…</li>
+        </ul>
+      </article>
+      <!-- ABONNEMENT -->
+      <article class="card card--highlight">
+        <h3>Abonnement</h3>
+        <p>Le modèle simple, clair et sans surprises</p>
+        <ul>
+          <li>Early adopters : 6,90€/mois</li>
+          <li>Tarif normal : 9,90€/mois</li>
+          <li>Profil public avancé</li>
+          <li>Activités illimitées</li>
+          <li>Contact visible</li>
+          <li>Calendrier intégré</li>
+          <li>Statistiques simples</li>
+          <li>Zéro commission</li>
+          <li>Vous gérez vos paiements comme vous voulez</li>
+          <li>Pas de Wallet nécessaire</li>
+          <li>Recommandé pour les pros réguliers qui veulent une visibilité stable, sans frais variables.</li>
+        </ul>
+      </article>
+      <!-- COMMISSION -->
+      <article class="card">
+        <h3>Commission</h3>
+        <p>Le modèle flexible pour les pros libres et saisonniers</p>
+        <ul>
+          <li>Abonnement gratuit</li>
+          <li>Activités illimitées</li>
+          <li>Contact visible</li>
+          <li>Commission : 3,70% par réservation confirmée</li>
+          <li>
+            Fonctionne avec :<br>
+            – Paiement sur place (cash, virement…)<br>
+            – Paiement via la plateforme
+          </li>
+          <li>Wallet interne → 1 crédit = 1€ (pour les paiements sur place)</li>
+          <li>Recharge CB en 2 secondes, payez uniquement quand vous en avez besoin</li>
+          <li>
+            Basé sur la confiance :<br>
+            – Le pro déclare ses infos dans le formulaire de sortie<br>
+            – Liberté totale de facturer comme vous voulez<br>
+            – Simplicité : les commissions passent par le wallet si nécessaire
+          </li>
+          <li>Parfait pour les pros occasionnels, saisonniers, ou ceux qui veulent garder une grande liberté.</li>
+        </ul>
+      </article>
+      <!-- ABONNEMENT PRO+ -->
+      <article class="card">
+        <h3>ABO PRO+ — 19,90€ (à venir)</h3>
+        <ul>
+          <li>Abonnement complet</li>
+          <li>Profil public avancé</li>
+          <li>Activités illimitées</li>
+          <li>Contact visible</li>
+          <li>Outils marketing</li>
+          <li>Statistiques avancées</li>
+          <li>Newsletter clients</li>
+          <li>Page premium</li>
+        </ul>
+      </article>
+      <!-- LIFETIME -->
+      <article class="card">
+        <h3>Lifetime — 99€</h3>
+        <ul>
+          <li>Réservé aux 100 premiers pros</li>
+          <li>Accès à vie</li>
+          <li>Badge “Fondateur Alpaguide”</li>
+          <li>Abonnement complet</li>
+          <li>Profil public avancé</li>
+          <li>Activités illimitées</li>
+          <li>Contact visible</li>
+          <li>Outils marketing</li>
+          <li>Statistiques avancées</li>
+          <li>Newsletter clients</li>
+          <li>Page premium</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+    <section class="offers-details" id="fonctionnement-offres">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Fonctionnement</p>
+      <h2>Comment fonctionnent nos offres ?</h2>
+      <p>
+        Trois modèles, trois façons de travailler. Nous avons simplifié chaque formule
+        pour que vous puissiez choisir celle qui correspond le mieux à votre activité,
+        votre saisonnalité et votre liberté.
+      </p>
+    </div>
+    <div class="cards grid-1 grid-3-md">
+      <!-- Freemium -->
+      <article class="card">
+        <h3>Freemium</h3>
+        <p class="card-desc">
+          Le mode découverte. Vous testez Alpaguide sans engagement, avec un profil visible
+          mais quelques limites naturelles.
+        </p>
+        <ul>
+          <li>Publiez une activité pour vous présenter.</li>
+          <li>Votre profil est visible des utilisateurs.</li>
+          <li>Le contact reste partiellement masqué.</li>
+          <li>Idéal pour tester avant de vous lancer pleinement.</li>
+        </ul>
+      </article>
+      <!-- Abonnement -->
+      <article class="card card--highlight">
+        <h3>Abonnement</h3>
+        <p class="card-desc">
+          La solution simple et sans surprise. Un prix fixe, aucune commission,
+          et toutes les fonctionnalités débloquées.
+        </p>
+        <ul>
+          <li>Zéro commission sur vos sorties.</li>
+          <li>Activités illimitées et contact visible.</li>
+          <li>Calendrier, statistiques et visibilité complète.</li>
+          <li>Parfait pour les pros réguliers qui veulent la tranquillité.</li>
+        </ul>
+      </article>
+      <!-- Commission + Wallet -->
+      <article class="card">
+        <h3>Commission et Wallet</h3>
+        <p class="card-desc">
+          Le modèle flexible. Pas d’abonnement : vous payez uniquement lorsque vous travaillez,
+          grâce à un système simple de crédits et d’un Wallet interne.
+        </p>
+        <h4>Le Wallet, comment ça marche ?</h4>
+        <ul>
+          <li><strong>1 crédit = 1 €</strong>, rien de compliqué.</li>
+          <li>Rechargez votre Wallet en quelques secondes par carte bancaire.</li>
+          <li>
+            La commission (3,70 %) est automatiquement prélevée depuis votre Wallet
+            si le paiement se fait sur place.
+          </li>
+          <li>Compatible avec paiement sur place ou via la plateforme.</li>
+        </ul>
+        <h4>Pourquoi ce système ?</h4>
+        <ul>
+          <li>Liberté totale : vous fixez vos prix et choisissez votre mode de paiement.</li>
+          <li>
+            Le Wallet vous permet d’être payé sur place tout en conservant la simplicité
+            de la plateforme.
+          </li>
+          <li>
+            Basé sur la confiance : vous déclarez vos informations dans votre formulaire de sortie.
+          </li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="offers-summary" id="resume-offres">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Résumé</p>
+      <h2>En un coup d’œil : comparez les 3 modèles</h2>
+      <p>Un tableau simple pour choisir rapidement l’offre qui correspond à votre manière de travailler.</p>
+    </div>
+    <div class="table-wrapper">
+      <table class="offers-table">
+        <thead>
+          <tr>
+            <th>Fonctionnalités</th>
+            <th>Freemium</th>
+            <th>Abonnement</th>
+            <th>Commission + Wallet</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Prix</td>
+            <td>Gratuit</td>
+            <td>6,90–9,90 €</td>
+            <td>0 €/mois (3,70 %)</td>
+          </tr>
+          <tr>
+            <td>Activités illimitées</td>
+            <td>❌</td>
+            <td>✔️</td>
+            <td>✔️</td>
+          </tr>
+          <tr>
+            <td>Contact visible</td>
+            <td>❌</td>
+            <td>✔️</td>
+            <td>✔️</td>
+          </tr>
+          <tr>
+            <td>Calendrier</td>
+            <td>❌</td>
+            <td>✔️</td>
+            <td>✔️</td>
+          </tr>
+          <tr>
+            <td>Messagerie</td>
+            <td>❌</td>
+            <td>✔️</td>
+            <td>✔️</td>
+          </tr>
+          <tr>
+            <td>Commission</td>
+            <td>❌</td>
+            <td>❌</td>
+            <td>✔️</td>
+          </tr>
+          <tr>
+            <td>Wallet</td>
+            <td>❌</td>
+            <td>✔️</td>
+            <td>✔️</td>
+          </tr>
+          <tr>
+            <td>Paiement sur place</td>
+            <td>✔️</td>
+            <td>✔️</td>
+            <td>✔️</td>
+          </tr>
+          <tr>
+            <td>Paiement plateforme</td>
+            <td>❌</td>
+            <td>✔️ </td>
+            <td>✔️ </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
 
     <section class="pros" id="pros">
-      <div class="container grid-1 grid-2-md pros__grid">
-        <div>
-          <p class="eyebrow">Pour les pros</p>
-          <h2>Une visibilité simple et personnalisée</h2>
-          <p>Guides, accompagnateurs et pros outdoor : rejoignez une communauté qui valorise votre style d’accompagnement.</p>
-          <ul class="list">
-            <li>Profil public détaillé (valeurs, activités, tarifs)</li>
-            <li>Choix du modèle : freemium, abonnement ou commission</li>
-            <li>Outil de mise en relation directe (messagerie ou mail)</li>
-          <li>Accès à une communauté locale de passionnés</li>
-          </ul>
-          <a class="btn btn--primary" href="#google-forms">Je suis proféssionel – En savoir plus</a>
-        </div>
-        <div class="card card--ghost">
-          <h3>Pourquoi rejoindre en tant que pro ?</h3>
-          <p>Gagnez du temps et du sens : Alpaguide vous met en relation directe avec des clients qui partagent votre vision.</p>
-          <ul class="list">
-            <li>Attirez des clients qualifiés et alignés sur vos valeurs.</li>
-            <li>Profitez d’une fiche claire qui met en avant votre style et vos tarifs.</li>
-            <li>Choisissez votre modèle (freemium, abo, commission) selon votre activité.</li>
-            <li>Développez votre réputation grâce aux recommandations locales.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+  <div class="container grid-1 grid-2-md pros__grid">
+    <div>
+      <p class="eyebrow">Pour les pros</p>
+      <h2>Une visibilité simple et personnalisée</h2>
+      <p>
+        Guides, accompagnateurs et professionnels outdoor : rejoignez une communauté
+        qui valorise votre style d’accompagnement et votre manière de vivre la montagne.
+      </p>
+      <ul class="list">
+        <li>Profil public détaillé (valeurs, activités, tarifs)</li>
+        <li>Choix du modèle : freemium, abonnement ou commission</li>
+        <li>Outil de mise en relation directe (messagerie ou mail)</li>
+        <li>Accès à une communauté locale de passionnés</li>
+      </ul>
+      <a class="btn btn--primary" href="#google-forms">Je suis professionnel – En savoir plus</a>
+    </div>
+    <div class="card card--ghost">
+      <h3>Pourquoi rejoindre en tant que pro ?</h3>
+      <p>
+        Gagnez du temps et du sens : Alpaguide vous met en relation directe avec des clients
+        qui partagent votre vision et votre approche.
+      </p>
+      <ul class="list">
+        <li>Attirez des clients qualifiés et alignés avec vos valeurs.</li>
+        <li>Profitez d’une fiche claire qui met en avant votre style et vos tarifs.</li>
+        <li>Choisissez votre modèle (freemium, abo, commission) selon votre activité.</li>
+        <li>Développez votre réputation grâce aux recommandations locales.</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
     <section class="users" id="utilisateurs">
-      <div class="container grid-1 grid-2-md users__grid">
-        <div>
-          <p class="eyebrow">Pour les utilisateurs</p>
-          <h2>Trouvez un guide qui partage vos valeurs</h2>
-          <ul class="list">
-            <li>Recherche par type d’activité, niveau, affinités</li>
-            <li>Profils complets et transparents</li>
-            <li>Messagerie directe avec le guide</li>
-            <li>Possibilité de noter et recommander</li>
-          </ul>
-          <a class="btn btn--secondary" href="#beta">Je suis utilisateur – Participer</a>
-        </div>
-        <div class="card card--ghost">
-          <h3>Pourquoi participer ?</h3>
-          <p>Obtenez une expérience personnalisée et aidez-nous à façonner une plateforme créée pour vous.</p>
-          <ul class="list">
-            <li>Trouvez des pros qui respectent vos valeurs et votre rythme.</li>
-            <li>Accédez à des profils détaillés avant de réserver.</li>
-            <li>Échangez en direct pour préparer votre sortie sereinement.</li>
-            <li>Donnez votre avis pour prioriser les prochaines fonctionnalités.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+  <div class="container grid-1 grid-2-md users__grid">
+    <div>
+      <p class="eyebrow">Pour les utilisateurs</p>
+      <h2>Trouvez un guide qui partage vos valeurs</h2>
+      <ul class="list">
+        <li>Recherche par type d’activité, niveau et affinités</li>
+        <li>Profils complets, humains et transparents</li>
+        <li>Messagerie directe avec le professionnel</li>
+        <li>Possibilité de noter et recommander vos expériences</li>
+      </ul>
+      <a class="btn btn--secondary" href="#beta">Je suis utilisateur – Participer</a>
+    </div>
+    <div class="card card--ghost">
+      <h3>Pourquoi participer ?</h3>
+      <p>
+        Bénéficiez d’une expérience personnalisée et aidez-nous
+        à façonner une plateforme construite pour vos besoins réels.
+      </p>
+      <ul class="list">
+        <li>Trouvez des pros qui respectent vos valeurs et votre rythme.</li>
+        <li>Accédez à des profils détaillés avant de réserver.</li>
+        <li>Échangez en direct pour préparer votre sortie sereinement.</li>
+        <li>Partagez votre avis pour guider les futures fonctionnalités.</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
     <section class="forms" id="google-forms">
-      <div class="container forms__grid grid-1 grid-2-md">
-        <div>
-          <p class="eyebrow">Prioritaire</p>
-          <h2>Questionnaires pour orienter le MVP</h2>
-          <p>Partagez vos besoins et vos attentes. Vos réponses nous aident à calibrer l’expérience pour les pros comme pour les utilisateurs passionnés.</p>
-        </div>
-        <div class="card card--highlight card--forms">
-          <p class="eyebrow">3 minutes</p>
-          <h3>Sélectionnez votre questionnaire</h3>
-          <ul class="link-list">
-            <li><a class="link-btn" href="https://forms.gle/9E2W7E1MKMfwKhMb7">Questionnaire Pros</a></li>
-            <li><a class="link-btn" href="https://forms.gle/X5f5GkMLENM154516">Questionnaire Utilisateurs</a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
+  <div class="container forms__grid grid-1 grid-2-md">
+    <div>
+      <p class="eyebrow">Prioritaire</p>
+      <h2>Questionnaires pour orienter le MVP</h2>
+      <p>
+        Partagez vos besoins et vos attentes. Vos réponses nous aident à construire
+        une expérience vraiment adaptée, aussi bien pour les pros que pour les utilisateurs passionnés.
+      </p>
+    </div>
+    <div class="card card--highlight card--forms">
+      <p class="eyebrow">3 minutes</p>
+      <h3>Sélectionnez votre questionnaire</h3>
+      <ul class="link-list">
+        <li><a class="link-btn" href="https://forms.gle/mKhqRhSbepWrVmzL7">Questionnaire Pros</a></li>
+        <li><a class="link-btn" href="https://forms.gle/X5f5GkMLENM154516">Questionnaire Utilisateurs</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
 
     <section class="beta" id="beta">
-      <div class="container grid-1 grid-2-md beta__grid">
-        <div>
-          <p class="eyebrow">Bêta privée</p>
-          <h2>Rejoindre la bêta</h2>
-          <p>Partagez vos coordonnées pour accéder en avant-première et nous aider à co-construire Alpaguide.</p>
-        </div>
-        <form class="form" id="beta-form" novalidate>
-          <div class="form__group">
-            <label for="firstname">Prénom</label>
-            <input id="firstname" name="firstname" type="text" autocomplete="given-name" required>
-          </div>
-          <div class="form__group">
-            <label for="lastname">Nom</label>
-            <input id="lastname" name="lastname" type="text" autocomplete="family-name" required>
-          </div>
-          <div class="form__group">
-            <label for="email">E-mail</label>
-            <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required>
-          </div>
-          <div class="form__group">
-            <label for="profile-type">Type de profil</label>
-            <select id="profile-type" name="profile-type" required>
-              <option value="">Sélectionnez</option>
-              <option>Professionnel</option>
-              <option>Particulier</option>
-              <option>Autre</option>
-            </select>
-          </div>
-          <div class="form__group">
-            <label for="message">Message (optionnel)</label>
-            <textarea id="message" name="message" rows="3"></textarea>
-          </div>
-          <button class="btn btn--primary" type="submit">Rejoindre la bêta</button>
-          <p class="form__feedback" aria-live="polite"></p>
-        </form>
+  <div class="container grid-1 grid-2-md beta__grid">
+    <div>
+      <p class="eyebrow">Bêta privée</p>
+      <h2>Rejoindre la bêta</h2>
+      <p>
+        Partagez vos coordonnées pour accéder en avant-première à Alpaguide
+        et nous aider à co-construire une plateforme vraiment adaptée à vos besoins.
+      </p>
+    </div>
+    <form class="form" id="beta-form" novalidate>
+      <div class="form__group">
+        <label for="firstname">Prénom</label>
+        <input id="firstname" name="firstname" type="text" autocomplete="given-name" required>
       </div>
-    </section>
+      <div class="form__group">
+        <label for="lastname">Nom</label>
+        <input id="lastname" name="lastname" type="text" autocomplete="family-name" required>
+      </div>
+      <div class="form__group">
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required>
+      </div>
+      <div class="form__group">
+        <label for="profile-type">Type de profil</label>
+        <select id="profile-type" name="profile-type" required>
+          <option value="">Sélectionnez</option>
+          <option>Professionnel</option>
+          <option>Particulier</option>
+          <option>Autre</option>
+        </select>
+      </div>
+      <div class="form__group">
+        <label for="message">Message (optionnel)</label>
+        <textarea id="message" name="message" rows="3"></textarea>
+      </div>
+      <button class="btn btn--primary" type="submit">Rejoindre la bêta</button>
+      <p class="form__feedback" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
 
     <section class="testimonials" id="temoignages">
       <div class="container">
@@ -329,97 +722,291 @@
         <div class="cards grid-1 grid-3-lg">
           <blockquote class="card">
             <p>“Enfin une appli qui remet l’humain au centre des activités de montagne.”</p>
-            <cite>Clara, passionnée de rando</cite>
+            <cite>Clara, passionnée de randonnée</cite>
           </blockquote>
           <blockquote class="card">
             <p>“Une idée qui fait du bien à notre métier.”</p>
-            <cite>Julien, guide haute montagne</cite>
+            <cite>Julien, guide de haute montagne</cite>
           </blockquote>
           <blockquote class="card">
-            <p>“Des profils clairs, des valeurs affichées, on sait avec qui on part.”</p>
+            <p>“Des profils clairs, des valeurs affichées… on sait vraiment avec qui on part.”</p>
             <cite>Lucie, grimpeuse</cite>
+          </blockquote>
+          <blockquote class="card">
+            <p>“J’ai trop hâte que ça sorte. On galère toujours à trouver un guide qui corresponde à notre niveau et à nos valeurs.”</p>
+            <cite>Sophie, vététiste</cite>
+          </blockquote>
+          <blockquote class="card">
+            <p>“S’il existe enfin une plateforme simple et humaine, je suis preneur. J’ai hâte de pouvoir tester.”</p>
+            <cite>Marc, accompagnateur en montagne (AMM)</cite>
+          </blockquote>
+          <blockquote class="card">
+            <p>“Ce projet tombe à pic. J’aimerais vraiment pouvoir choisir un guide selon son style et sa personnalité.”</p>
+            <cite>Élodie, rideuse snowboard</cite>
           </blockquote>
         </div>
       </div>
     </section>
 
-    <section class="faq" id="faq">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">FAQ</p>
-          <h2>Questions fréquentes</h2>
-        </div>
-        <div class="faq__list" role="tablist" aria-label="FAQ Alpaguide">
-          <div class="faq__item">
-            <button class="faq__question" aria-expanded="false">La sécurité est-elle assurée ?</button>
-            <div class="faq__answer" role="region">Nous vérifions les profils et certifications des pros, et partageons des recommandations de sécurité avant chaque sortie.</div>
-          </div>
-          <div class="faq__item">
-            <button class="faq__question" aria-expanded="false">Quid de l’assurance ?</button>
-            <div class="faq__answer" role="region">Chaque professionnel reste responsable de ses assurances. Nous rappelons les obligations légales et partageons des guides de bonnes pratiques.</div>
-          </div>
-          <div class="faq__item">
-            <button class="faq__question" aria-expanded="false">Comment sont gérés les paiements ?</button>
-            <div class="faq__answer" role="region">Paiement direct ou via Alpaguide selon l’offre choisie. Transparence sur les frais et confirmations claires.</div>
-          </div>
-          <div class="faq__item">
-            <button class="faq__question" aria-expanded="false">Comment devenir pro sur Alpaguide ?</button>
-            <div class="faq__answer" role="region">Remplissez le questionnaire pro, puis nous validons votre profil et vous aidons à le personnaliser.</div>
-          </div>
-          <div class="faq__item">
-            <button class="faq__question" aria-expanded="false">Sur quels critères se fait le matching ?</button>
-            <div class="faq__answer" role="region">Envies, activités, niveau, territoire, valeurs clés, style d’accompagnement et disponibilités.</div>
-          </div>
+    <section class="faq-payments" id="faq">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">FAQ Paiements</p>
+      <h2>Comprendre le fonctionnement des paiements</h2>
+    </div>
+    <div class="faq__list">
+      <div class="faq__item">
+        <button class="faq__question">Qu’est-ce que le Wallet Alpaguide ?</button>
+        <div class="faq__answer">
+          Le Wallet est un petit portefeuille interne à l’application.
+          Il sert uniquement aux professionnels qui choisissent le modèle “Commission”.
+          <br><br>
+          <strong>1 crédit = 1 €</strong>.  
+          Vous rechargez votre Wallet en quelques secondes par carte bancaire lorsque vous en avez besoin.
         </div>
       </div>
-    </section>
+      <div class="faq__item">
+        <button class="faq__question">À quoi servent les crédits ?</button>
+        <div class="faq__answer">
+          Les crédits servent à régler la commission (3,70 %) lorsque le paiement de la sortie
+          se fait <strong>sur place</strong> : en espèces, virement, chèque, terminal mobile…  
+          <br><br>
+          Résultat : vous gardez votre liberté de paiement tout en gardant une expérience simple et transparente dans Alpaguide.
+        </div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question">Dois-je utiliser le Wallet si mes clients paient sur la plateforme ?</button>
+        <div class="faq__answer">
+          <strong>Non.</strong>  
+          Si le paiement passe par la plateforme, tout est automatique.  
+          Vous n’avez pas besoin d’utiliser le Wallet : la commission est directement prélevée au moment du paiement.
+        </div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question">Pourquoi proposer un Wallet pour les paiements sur place ?</button>
+        <div class="faq__answer">
+          Pour une raison simple : vous laisser la liberté de travailler comme vous voulez
+          tout en gardant un système clair et transparent.
+          <br><br>
+          Le Wallet évite :  
+          – de devoir déclarer vos paiements en retard  
+          – les oublis  
+          – les complications administratives  
+          <br>
+          Tout est fluide : vous êtes payé comme vous voulez, et la commission est gérée proprement via vos crédits.
+        </div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question">Quand la commission est-elle prélevée ?</button>
+        <div class="faq__answer">
+          Si le paiement est sur place : via votre Wallet, automatiquement lorsque vous déclarez la sortie.  
+          <br>
+          Si le paiement est via Alpaguide : elle est prélevée directement sur la transaction, sans action de votre part.
+        </div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question">Puis-je travailler sans jamais utiliser le Wallet ?</button>
+        <div class="faq__answer">
+          Oui, si vous utilisez uniquement les paiements via Alpaguide.
+          <br><br>
+          Le Wallet n’est utile que si vous acceptez les paiements sur place.
+          C’est totalement flexible : vous choisissez votre mode de travail.
+        </div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question">Les utilisateurs doivent-ils utiliser le Wallet ?</button>
+        <div class="faq__answer">
+          Jamais.  
+          Le Wallet est une fonctionnalité dédiée aux professionnels pour gérer la commission lorsqu’ils encaissent sur place.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class="faq-pros" id="faq-pros">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">FAQ Pros</p>
+      <h2>Questions fréquentes des professionnels</h2>
+    </div>
+    <div class="faq__list">
+      <div class="faq__item">
+        <button class="faq__question">L’inscription est-elle vraiment gratuite ?</button>
+        <div class="faq__answer">
+          Oui. Le Freemium est totalement gratuit et sans engagement.
+          Vous pouvez tester Alpaguide, publier une activité et rendre votre profil visible
+          avant de choisir un modèle.
+        </div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question">Comment vérifiez-vous les professionnels ?</button>
+        <div class="faq__answer">
+          Nous vérifions les diplômes, certificats et statuts légaux
+          pour garantir la fiabilité de chaque profil.
+          Ce contrôle protège votre métier… et vos futurs clients.
+        </div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question">Puis-je fixer librement mes tarifs ?</button>
+        <div class="faq__answer">
+          Oui, totalement. Alpaguide ne fixe pas les prix.
+          Vous gardez la maîtrise complète de vos tarifs, de votre manière de travailler
+          et de vos conditions.
+        </div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question">Comment fonctionne la commission ?</button>
+        <div class="faq__answer">
+          Si vous choisissez le modèle “Commission + Wallet”, vous ne payez que lorsque
+          vous travaillez.  
+          La commission (3,70 %) est prélevée automatiquement (si paiement via la plateforme),
+          sans surprise et sans frais cachés.
+        </div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question">Puis-je être payé sur place ?</button>
+        <div class="faq__answer">
+          Oui. Vous pouvez être payé sur place (cash, virement, terminal…).
+          Dans ce cas, la commission est simplement prélevée via votre Wallet.
+          Simple, flexible, transparent.
+        </div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question">Quels avantages par rapport aux plateformes classiques ?</button>
+        <div class="faq__answer">
+          Alpaguide met en avant votre style, vos valeurs et votre personnalité,
+          pas seulement vos tarifs.  
+          Vous attirez des clients alignés avec vous, ce qui réduit les problèmes,
+          améliore l’expérience… et valorise votre métier.
+        </div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question">Je suis saisonnier : quel modèle choisir ?</button>
+        <div class="faq__answer">
+          Le modèle Commission + Wallet est idéal pour vous :
+          zéro abonnement en basse saison, vous payez uniquement lorsque vous travaillez.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-users" id="faq-users">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">FAQ Utilisateurs</p>
+      <h2>Questions fréquentes des utilisateurs</h2>
+    </div>
+    <div class="faq__list">
+      <div class="faq__item">
+        <button class="faq__question">Comment sont choisis les guides et pros ?</button>
+        <div class="faq__answer">
+          Chaque professionnel est vérifié (diplômes, certifications, assurances).
+          Vous êtes mis en relation uniquement avec des pros sérieux et qualifiés.
+        </div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question">Comment fonctionne la recherche ?</button>
+        <div class="faq__answer">
+          Vous filtrez par activité (rando, ski, alpi, VTT…), par niveau,
+          mais aussi par valeurs, style d’accompagnement et territoire.
+          Vous choisissez le pro qui vous ressemble vraiment.
+        </div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question">Puis-je discuter directement avec le guide ?</button>
+        <div class="faq__answer">
+          Oui. Vous échangez directement avec le professionnel via la messagerie,
+          sans intermédiaire ni robot. Simple et humain.
+        </div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question">Le paiement est-il sécurisé ?</button>
+        <div class="faq__answer">
+          Oui. Selon le modèle choisi par le pro, vous pouvez payer via Alpaguide ou sur place.
+          Dans tous les cas, vous recevez une confirmation claire et transparente.
+        </div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question">Puis-je annuler une sortie ?</button>
+        <div class="faq__answer">
+          Oui, selon les conditions du professionnel.
+          Chaque pro indique clairement sa politique d’annulation pour éviter les surprises.
+        </div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question">Les avis sont-ils fiables ?</button>
+        <div class="faq__answer">
+          Oui. Seules les personnes ayant réellement fait une sortie peuvent laisser un avis.
+          Pas de faux commentaires. Pas de notation injuste.
+        </div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question">Alpaguide est-il gratuit pour les utilisateurs ?</button>
+        <div class="faq__answer">
+          Oui, la plateforme est totalement gratuite pour les utilisateurs.
+          Vous ne payez que votre sortie avec le professionnel.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <section class="cta" id="cta-final">
-      <div class="container cta__inner">
-        <div>
-          <p class="eyebrow">Early access</p>
-          <h2>Devenez fondateur early access</h2>
-          <p>Inscrivez-vous pour obtenir un accès anticipé, co-construire la plateforme et recevoir les nouveautés.</p>
-        </div>
-        <form class="form cta__form" id="cta-form" novalidate>
-          <label class="sr-only" for="cta-email">E-mail</label>
-          <input id="cta-email" name="cta-email" type="email" placeholder="Votre e-mail" required>
-          <button class="btn btn--secondary" type="submit">Demander un accès</button>
-          <p class="form__feedback" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
+  <div class="container cta__inner">
+    <div>
+      <p class="eyebrow">Early Access</p>
+      <h2>Devenez membre fondateur</h2>
+      <p>
+        Inscrivez-vous pour obtenir un accès anticipé,
+        participer à la co-construction d’Alpaguide
+        et recevoir toutes les nouveautés en avant-première.
+      </p>
+    </div>
+    <form class="form cta__form" id="cta-form" novalidate>
+      <label class="sr-only" for="cta-email">E-mail</label>
+      <input id="cta-email" name="cta-email" type="email" placeholder="Votre e-mail" required>
+      <button class="btn btn--secondary" type="submit">Demander un accès</button>
+      <p class="form__feedback" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
 
-    <section class="contact" id="contact">
-      <div class="container grid-1 grid-2-md contact__grid">
-        <div>
-          <p class="eyebrow">Contact</p>
-          <h2>Restons en lien :</h2>
-          <p>Écrivez-nous par mail : <a href="mailto:alpaguide.contact@gmail.com">alpaguide.contact@gmail.com</a></p>
-          <p>Ou retrouvez nous sur nos réseaux :</p>
-          <div class="socials" aria-label="Réseaux sociaux">
-            <a href="#" aria-label="TikTok">
-              <svg aria-hidden="true" viewBox="0 0 24 24">
-                <path d="M16.9 6.9c1.3 1.1 2.5 1.6 3.6 1.7v3.3c-1.6-.1-3-0.6-4.3-1.4v5.9c0 2.9-2.3 5.6-6.1 5.6-3.7 0-6.1-2.6-6.1-5.8 0-3.2 2.4-5.8 6.1-5.8 0.3 0.2 0.6 0.4 0.6 0.4v3.4s-0.3-0.3-0.8-0.3c-1.4 0-2.3 1-2.3 2.3 0 1.3 0.9 2.2 2.2 2.2 1.4 0 2.2-1.1 2.2-2.6V3h3.4c0 0.9 0.2 2.1 1.5 3.2z" fill="currentColor"/>
-              </svg>
-            </a>
-            <a href="#" aria-label="Facebook">
-              <svg aria-hidden="true" viewBox="0 0 24 24">
-                <path d="M13.5 9H15V6.3c-.4 0-.9-.1-1.6-.1-1.6 0-2.6 1.1-2.6 2.9V9H9v2.9h1.9V21h3.1v-9.1H16L16.3 9h-2.8V8c0-.5.2-0.8 1-0.8z" fill="currentColor"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-        <div class="card card--ghost">
-          <h3>À venir</h3>
-          <ul>
-            <li>MVP en cours de développement</li>
-            <li>Roadmap publique bientôt disponible</li>
-            <li>Objectif : ouverture bêta court 2026</li>
-          </ul>
+
+      <section class="contact" id="contact">
+    <div class="container grid-1 grid-2-md contact__grid">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>Restons en lien</h2>
+        <p>
+          Une question, une idée, un partenariat ?  
+          Écrivez-nous à :  
+          <a href="mailto:alpaguide.contact@gmail.com">alpaguide.contact@gmail.com</a>
+        </p>
+        <p>Suivez l’aventure Alpaguide :</p>
+        <div class="socials socials--premium" aria-label="Réseaux sociaux">
+          
+          <!-- TikTok -->
+          <a href="https://www.tiktok.com/@alpaguide?_r=1&_t=ZN-91cQ8L6dr6p" aria-label="TikTok" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8.24537V15.5C16 19.0899 13.0899 22 9.5 22C5.91015 22 3 19.0899 3 15.5C3 11.9101 5.91015 9 9.5 9C10.0163 9 10.5185 9.06019 11 9.17393V12.3368C10.5454 12.1208 10.0368 12 9.5 12C7.567 12 6 13.567 6 15.5C6 17.433 7.567 19 9.5 19C11.433 19 13 17.433 13 15.5V2H16C16 4.76142 18.2386 7 21 7V10C19.1081 10 17.3696 9.34328 16 8.24537Z"></path></svg>
+          </a>
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/share/1BMykkU298/?mibextid=wwXIfr" aria-label="Facebook" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001 2C6.47813 2 2.00098 6.47715 2.00098 12C2.00098 16.9913 5.65783 21.1283 10.4385 21.8785V14.8906H7.89941V12H10.4385V9.79688C10.4385 7.29063 11.9314 5.90625 14.2156 5.90625C15.3097 5.90625 16.4541 6.10156 16.4541 6.10156V8.5625H15.1931C13.9509 8.5625 13.5635 9.33334 13.5635 10.1242V12H16.3369L15.8936 14.8906H13.5635V21.8785C18.3441 21.1283 22.001 16.9913 22.001 12C22.001 6.47715 17.5238 2 12.001 2Z"></path></svg>
+          </a>
         </div>
       </div>
-    </section>
+      <div class="card card--ghost premium-card">
+        <h3>À venir</h3>
+        <ul>
+          <li>MVP en développement</li>
+          <li>Roadmap publique à venir</li>
+          <li>Bêta privée prévue courant 2026</li>
+        </ul>
+      </div>
+    </div>
+  </section>
   </main>
 
   <div class="theme-switcher" aria-label="Changer l'ambiance de couleur" data-tooltip="Choisis ton style dès maintenant">
@@ -435,20 +1022,28 @@
       <span class="theme-swatch theme-swatch--sunset" aria-hidden="true"></span>
       <span class="sr-only">Thème sunset (or &amp; corail)</span>
     </button>
+    <button class="theme-switcher__close" type="button" aria-label="Fermer le sélecteur de thème">
+      <span aria-hidden="true">×</span>
+    </button>
   </div>
+  <button class="theme-switcher__restore" type="button" aria-label="Rouvrir le sélecteur de thème">
+    🎨
+  </button>
 
   <footer class="footer">
-    <div class="container footer__inner">
-      <span>© <span id="year"></span> Alpaguide</span>
-      <div class="footer__links">
-        <a href="#fonctionnement">Fonctionnement</a>
-        <a href="#faq">FAQ</a>
-        <a href="#ML">Mentions légales</a>          
-        <a href="#">Politique de confidentialité</a>
-      </div>
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <span class="footer__logo">Alpaguide</span>
+      <span class="footer__copy">© <span id="year"></span> — Tous droits réservés</span>
     </div>
-  </footer>
+    <nav class="footer__links">
+      <a href="#fonctionnement">Fonctionnement</a>
+      <a href="#faq">FAQ</a>
+      <a href="mentions.html">Mentions légales & Politique de confidentialité</a>
+    </nav>
+  </div>
+</footer>
 
-  <script src="app.js" defer></script>
+  <script src="js/app.js" defer></script>
 </body>
 </html>
