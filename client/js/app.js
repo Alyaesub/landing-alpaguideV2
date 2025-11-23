@@ -213,7 +213,10 @@ function setupThemeSwitcher() {
 	})();
 	const storedHidden = (() => {
 		try {
-			return localStorage.getItem("alpaguide-theme-switcher-hidden") === "true";
+			return (
+				localStorage.getItem("alpaguide-theme-switcher-hidden") ===
+				"true"
+			);
 		} catch (error) {
 			return false;
 		}
