@@ -45,15 +45,15 @@
       </button>
       <nav class="nav" id="primary-nav" aria-label="Navigation principale">
         <button class="nav__close" type="button" aria-label="Fermer le menu">
-          <span aria-hidden="true">×</span>
+          <span aria-hidden="true"></span>
         </button>
         <ul class="nav__list">
-          <li><a href="#pourquoi">Pourquoi</a></li>
           <li><a href="#valeurs">Valeurs</a></li>
+          <li><a href="#pourquoi">Pourquoi</a></li>
           <li><a href="#fonctionnement">Fonctionnement</a></li>
           <li><a href="#offres">Offres</a></li>
-          <li><a href="#details-offres">Détails</a></li>
           <li><a href="#resume-offres">Résumé</a></li>
+          <li><a href="#beta">Bêta</a></li>
           <li><a href="#temoignages">Témoignages</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -292,7 +292,7 @@
       </div>
     </section>
 
-    <section class="offer-details" id="details-offres">
+    <section class="offer-details" id="offres">
   <div class="container">
     <div class="section-heading">
       <p class="eyebrow">Détails des offres</p>
@@ -337,7 +337,7 @@
   </div>
 </section>
 
-    <section class="offers" id="offres">
+    <section class="offers" >
   <div class="container">
     <div class="section-heading">
       <p class="eyebrow">Offres</p>
@@ -677,8 +677,24 @@
       <h2>Rejoindre la bêta</h2>
       <p>
         Partagez vos coordonnées pour accéder en avant-première à Alpaguide
-        et nous aider à co-construire une plateforme vraiment adaptée à vos besoins.
+        et participer à la construction de la future version de la plateforme.
       </p>
+      <div class="beta__highlight card card--ghost">
+        <h3>Une bêta complète, gratuite… et réaliste</h3>
+        <p>
+          Pendant toute la période de test du MVP, <strong>toutes les fonctionnalités seront débloquées</strong> :
+          activités illimitées, profils complets, messagerie, calendrier, statistiques, mise en relation…
+        </p>
+        <p>
+          Vous pourrez également tester <strong>le Wallet</strong> :
+          simuler des paiements sur place, comprendre la logique des crédits, et essayer les modèles
+          Freemium / Abonnement / Commission dans des conditions réelles.
+        </p>
+        <p>
+          <strong>Objectif :</strong> vous permettre de tester Alpaguide gratuitement,
+          sans engagement, et nous aider à peaufiner le MVP avant l'ouverture officielle.
+        </p>
+      </div>
     </div>
     <form class="form" id="beta-form" novalidate>
       <div class="form__group">
@@ -1038,8 +1054,9 @@
     </div>
     <nav class="footer__links">
       <a href="#fonctionnement">Fonctionnement</a>
-      <a href="#faq">FAQ</a>
+      <a href="cgu-cgv.html">CGU & CGV</a>
       <a href="mentions.html">Mentions légales & Politique de confidentialité</a>
+      <a href="#faq">FAQ</a>
     </nav>
   </div>
 </footer>
