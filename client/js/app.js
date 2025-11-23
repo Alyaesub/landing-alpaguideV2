@@ -12,6 +12,23 @@ const themes = ["forest", "glacier", "sunset"];
 const focusableSelector = "a[href], button, textarea, input, select";
 let navFocusable = [];
 
+async function sendFormData(url, data) {
+	try {
+		const res = await fetch(url, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(data),
+		});
+
+		return await res.json();
+	} catch (error) {
+		console.error("❌ Erreur fetch :", error);
+		return { ok: false };
+	}
+}
+
 function setYear() {
 	if (yearEl) {
 		yearEl.textContent = new Date().getFullYear();
@@ -113,28 +130,88 @@ function handleForm(form) {
 		feedback.style.color = isSuccess ? "#8de4af" : "#fca5a5";
 	};
 
-	form.addEventListener("submit", (event) => {
+	form.addEventListener("submit", async (event) => {
 		event.preventDefault();
+
 		const formData = new FormData(form);
+
+		const submitBtn = form.querySelector("button[type='submit']");
+		submitBtn.disabled = true;
+		const oldText = submitBtn.textContent;
+		submitBtn.textContent = "Envoi…";
+
 		const email = (formData.get("email") || formData.get("cta-email") || "")
 			.toString()
 			.trim();
 		const firstname = (formData.get("firstname") || "").toString().trim();
 		const lastname = (formData.get("lastname") || "").toString().trim();
 		const profile = (formData.get("profile-type") || "").toString().trim();
-
-		if (form.id === "beta-form" && (!firstname || !lastname || !profile)) {
-			setFeedback("Merci de remplir les champs requis.");
-			return;
-		}
+		const message = (formData.get("message") || "").toString().trim();
 
 		if (!validateEmail(email)) {
 			setFeedback("Adresse e-mail invalide.");
+			submitBtn.disabled = false;
+			submitBtn.textContent = oldText;
 			return;
 		}
 
-		setFeedback("Merci ! Nous revenons vers vous rapidement.", true);
-		form.reset();
+		// --------------------- BÊTA ---------------------
+		if (form.id === "beta-form") {
+			if (!firstname || !lastname || !profile) {
+				setFeedback("Merci de remplir tous les champs requis.");
+				submitBtn.disabled = false;
+				submitBtn.textContent = oldText;
+				return;
+			}
+
+			const payload = {
+				firstname,
+				lastname,
+				email,
+				profileType: profile,
+				message,
+			};
+
+			const response = await sendFormData(
+				"http://localhost:4000/api/contact/beta",
+				payload
+			);
+
+			if (response.ok) {
+				setFeedback(
+					"Merci ! Vous recevrez un email de confirmation.",
+					true
+				);
+				form.reset();
+			} else {
+				setFeedback("Erreur serveur. Réessayez plus tard.");
+			}
+
+			submitBtn.disabled = false;
+			submitBtn.textContent = oldText;
+			return;
+		}
+
+		// ---------------------- CTA ----------------------
+		if (form.id === "cta-form") {
+			const payload = { email };
+
+			const response = await sendFormData(
+				"http://localhost:4000/api/contact/cta",
+				payload
+			);
+
+			if (response.ok) {
+				setFeedback("Merci ! Vous recevrez un email bientôt.", true);
+				form.reset();
+			} else {
+				setFeedback("Erreur serveur. Réessayez plus tard.");
+			}
+
+			submitBtn.disabled = false;
+			submitBtn.textContent = oldText;
+			return;
+		}
 	});
 }
 
