@@ -1,14 +1,10 @@
-const nav = document.querySelector(".nav");
-const navToggle = document.querySelector(".nav__toggle");
-const navClose = document.querySelector(".nav__close");
-const navLinks = document.querySelectorAll(".nav a");
-const yearEl = document.getElementById("year");
-const themeSwitcher = document.querySelector(".theme-switcher");
-const themeButtons = document.querySelectorAll(".theme-switcher__option");
-const themeClose = document.querySelector(".theme-switcher__close");
-const themeRestore = document.querySelector(".theme-switcher__restore");
-const themes = ["forest", "glacier", "sunset"];
+import { setupNavigation } from "./modules/navigation.js";
+import { setupThemeSwitcher } from "./modules/theme.js";
+import { setupFaq } from "./modules/faq.js";
+import { setupScrollReveal } from "./modules/gallery.js";
+import { setupForms } from "./modules/forms.js";
 
+<<<<<<< HEAD
 const focusableSelector = "a[href], button, textarea, input, select";
 let navFocusable = [];
 
@@ -342,13 +338,12 @@ function setupThemeSwitcher() {
 
 function init() {
 	setYear();
+=======
+document.addEventListener("DOMContentLoaded", () => {
+>>>>>>> dev
 	setupNavigation();
-	smoothScroll();
-	handleForm(document.getElementById("beta-form"));
-	handleForm(document.getElementById("cta-form"));
+	setupThemeSwitcher();
 	setupFaq();
 	setupScrollReveal();
-	setupThemeSwitcher();
-}
-
-document.addEventListener("DOMContentLoaded", init);
+	setupForms();
+});
