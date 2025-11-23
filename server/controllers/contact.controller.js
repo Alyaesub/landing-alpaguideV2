@@ -1,4 +1,8 @@
-const { sendContactMail } = require("../utils/sendMail");
+const {
+	sendContactMail,
+	sendUserConfirmationMail,
+	sendUserCtaConfirmation,
+} = require("../utils/sendMail");
 
 //Formulaire BÊTA
 exports.sendBetaMail = async (req, res) => {
@@ -12,13 +16,18 @@ exports.sendBetaMail = async (req, res) => {
 				error: "Champs requis manquants.",
 			});
 		}
-
+		//mail pour le site a chauqe inscription
 		await sendContactMail({
 			subject: "Nouvelle inscription BÊTA — Alpaguide",
 			name: `${firstname} ${lastname}`.trim(),
 			email,
 			type: profileType || "Non spécifié",
 			message: message || "",
+		});
+		// Envoyer un mail au visiteur
+		await sendUserConfirmationMail({
+			email,
+			firstname,
 		});
 
 		return res.json({ ok: true });
@@ -42,6 +51,7 @@ exports.sendCtaMail = async (req, res) => {
 			});
 		}
 
+		//Envoi au propriétaire du site
 		await sendContactMail({
 			subject: "Demande Early Access — Alpaguide",
 			name: "Visiteur Landing",
@@ -49,6 +59,8 @@ exports.sendCtaMail = async (req, res) => {
 			type: "CTA",
 			message: "",
 		});
+		// Envoi d’un message au visiteur
+		await sendUserCtaConfirmation({ email });
 
 		return res.json({ ok: true });
 	} catch (error) {
