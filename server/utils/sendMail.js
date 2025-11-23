@@ -40,3 +40,44 @@ ${message || "Aucun message fourni"}
     `,
 	});
 };
+
+// 📬 Envoi d'un mail au visiteur (accusé de réception)
+exports.sendUserConfirmationMail = async ({ email, firstname }) => {
+	return transporter.sendMail({
+		from: `"Alpaguide" <${process.env.EMAIL_USER}>`,
+		to: email,
+		subject: "Merci pour votre inscription à la bêta Alpaguide !",
+		text: `
+Bonjour ${firstname || ""},
+
+Merci pour votre inscription à la bêta privée d’Alpaguide 
+
+Nous sommes en train de construire une plateforme simple, locale et humaine pour connecter passionnés et professionnels de la montagne.
+
+👉 Vous serez informé dès l'ouverture de l'accès anticipé.
+👉 Vous recevrez les nouveautés directement par email.
+
+À très vite !
+L’équipe Alpaguide
+    `,
+	});
+};
+
+// 📬 Envoi d'un mail au visiteur - CTA Early Access
+exports.sendUserCtaConfirmation = async ({ email }) => {
+	return transporter.sendMail({
+		from: `"Alpaguide" <${process.env.EMAIL_USER}>`,
+		to: email,
+		subject: "Merci pour votre demande d’accès anticipé Alpaguide !",
+		text: `
+Bonjour,
+
+Merci pour votre demande d'accès anticipé à Alpaguide 
+
+Nous vous tiendrons informé(e) dès l’ouverture de la bêta privée et des prochaines étapes.
+
+À très vite,
+L’équipe Alpaguide
+    `,
+	});
+};

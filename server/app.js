@@ -1,25 +1,31 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const helmet = require("helmet");
 
 // Charger le .env
 dotenv.config();
 
 // Import des routes
-const contactRoutes = require("./routes/contact.routes");
-
 const app = express();
+const contactRoutes = require("./routes/contact.routes");
+const { contactLimiter } = require("./middlewares/rateLimit");
+const logger = require("./middlewares/logger");
+const sanitize = require("./middlewares/sanitize");
 
 //  Middlewares globaux
 app.use(cors()); // Autoriser les requêtes du front
 app.use(express.json()); // Parser JSON
 app.use(express.urlencoded({ extended: true })); // Parser forms si besoin
+app.use("/api/contact", contactLimiter);
+app.use(helmet());
+app.use(logger);
+app.use(sanitize);
 
 //Routes API
 app.use("/api/contact", contactRoutes);
 
 // Lancement serveur
-
 const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
