@@ -21,6 +21,12 @@ async function attachHandler(form, type) {
 	form.addEventListener("submit", async (e) => {
 		e.preventDefault();
 
+		// ---- HONEYPOT (anti-bot) ----
+		if (form.website && form.website.value.trim() !== "") {
+			console.warn("Bot détecté → requête ignorée");
+			return;
+		}
+
 		const data = Object.fromEntries(new FormData(form));
 		const email = data.email || data["cta-email"];
 
@@ -33,11 +39,17 @@ async function attachHandler(form, type) {
 		const oldText = button.textContent;
 		button.textContent = "Envoi...";
 
+		// ---- Sélection de l’URL selon environnement ----
+		const API_BASE =
+			window.location.hostname === "localhost"
+				? "http://localhost:4000"
+				: "https://api.alpaguide.fr";
+
 		let url = "";
 		let payload = {};
 
 		if (type === "beta") {
-			url = "http://localhost:4000/api/contact/beta";
+			url = `${API_BASE}/api/contact/beta`;
 			payload = {
 				firstname: data.firstname,
 				lastname: data.lastname,
@@ -46,11 +58,17 @@ async function attachHandler(form, type) {
 				message: data.message || "",
 			};
 		} else {
-			url = "http://localhost:4000/api/contact/cta";
+			url = `${API_BASE}/api/contact/cta`;
 			payload = { email };
 		}
 
-		const res = await postJSON(url, payload);
+		// ---- Appel API ----
+		let res = { ok: false };
+		try {
+			res = await postJSON(url, payload);
+		} catch (err) {
+			console.error("Erreur POST :", err);
+		}
 
 		if (res.ok) {
 			show("Merci ! Vous recevrez un email de confirmation.", true);
