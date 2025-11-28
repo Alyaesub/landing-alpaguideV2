@@ -61,9 +61,10 @@ exports.sendUserConfirmationMail = async ({ email, firstname }) => {
 			text: `
 Bonjour ${firstname || ""},
 
-Merci pour votre inscription à la bêta privée d’Alpaguid 🏔️
-
+Merci pour votre inscription à la bêta privée d’Alpaguid.
 Nous vous préviendrons dès l'ouverture de l'accès anticipé.
+
+Restez connecté(e) et merci pour votre soutien !
       `,
 		});
 
@@ -86,6 +87,7 @@ Bonjour,
 
 Merci pour votre demande d'accès anticipé à Alpaguide.
 Nous vous tiendrons informé(e) dès l’ouverture de la bêta.
+Restez connecté(e) et merci pour votre soutien !
       `,
 		});
 
