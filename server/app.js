@@ -22,8 +22,16 @@ app.use(helmet());
 app.use(logger);
 app.use(sanitize);
 
+// Route test (ping)
+app.get("/api/ping", (req, res) => {
+	res.json({ message: "pong" });
+});
+
 //Routes API
 app.use("/api/contact", contactRoutes);
+
+// Pour tester le déploiement
+console.log("🔁 Nouvelle version déployée !");
 
 // Lancement serveur
 const PORT = process.env.PORT || 4000;
