@@ -7,7 +7,42 @@
 }
 
 .why__grid {
+  display: grid;
+  gap: $space-7;
+  justify-items: center;
   align-items: start;
+}
+
+.why__intro {
+  text-align: center;
+  display: grid;
+  gap: $space-4;
+  justify-items: center;
+}
+
+.why__points {
+  display: grid;
+  gap: $space-4;
+  width: 100%;
+}
+
+.why__points .card {
+  height: 100%;
+}
+
+.why__points .conclusion {
+  text-align: center;
+}
+
+@include respond(md) {
+  .why__points {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: $space-5;
+  }
+
+  .why__points .conclusion {
+    grid-column: 1 / -1;
+  }
 }
 
 .conclusion {

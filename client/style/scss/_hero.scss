@@ -28,7 +28,8 @@
 .hero__keywords {
   display: flex;
   flex-wrap: wrap;
-  gap: $space-2;
+  gap: $space-4;
+  margin-top: 1rem;
 }
 
 .hero__visual img {
@@ -43,4 +44,8 @@
     grid-template-columns: 1.1fr 0.9fr;
     align-items: center;
   }
+}
+
+.hero::before {
+  filter: blur(0) saturate(1.05);
 }

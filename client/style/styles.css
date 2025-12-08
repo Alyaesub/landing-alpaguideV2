@@ -442,7 +442,7 @@ textarea {
   position: absolute;
   inset: 0;
   background: url("../asset/20230829_105017 - Copie (2).jpg") center/cover no-repeat;
-  filter: blur(2px) saturate(1.05);
+  filter: blur(0px) saturate(1.05);
   transform: scale(1.02);
   z-index: -2;
 }
@@ -585,6 +585,10 @@ textarea {
   padding: 4rem 0;
 }
 
+.pitch {
+  padding-bottom: 0;
+}
+
 .forms {
   background: radial-gradient(circle at 24% 18%, color-mix(in srgb, var(--glow-a) 100%, transparent), transparent 32%), radial-gradient(circle at 82% 10%, color-mix(in srgb, var(--glow-b) 100%, transparent), transparent 28%);
 }
@@ -676,12 +680,31 @@ textarea {
 }
 
 .why__grid {
+  display: grid;
+  gap: 3rem;
+  justify-items: center;
   align-items: start;
+}
+
+.why__intro {
+  text-align: center;
+  display: grid;
+  gap: 1.5rem;
+  justify-items: center;
 }
 
 .why__points {
   display: grid;
-  gap: 1.5rem;
+  gap: 1rem;
+  width: 100%;
+}
+
+.why__points .card {
+  height: 100%;
+}
+
+.why__points .conclusion {
+  text-align: center;
 }
 
 .conclusion {
@@ -703,6 +726,17 @@ textarea {
 
 .offers__grid ul {
   list-style: disc;
+}
+
+@media (min-width: 768px) {
+  .why__points {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .why__points .conclusion {
+    grid-column: 1/-1;
+  }
 }
 
 .pros__grid,
