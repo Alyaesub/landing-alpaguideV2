@@ -21,6 +21,7 @@
   --glow-a: rgba(60, 86, 111, 0.14);
   --glow-b: rgba(47, 109, 74, 0.18);
   --cta-bg: linear-gradient(135deg, rgba(43, 108, 176, 0.2), rgba(46, 125, 50, 0.25));
+  --section-space: 4rem;
 }
 
 .theme-forest {
@@ -281,6 +282,31 @@ textarea {
   transform: scaleX(1);
 }
 
+.nav__beta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 18%, white), color-mix(in srgb, var(--accent) 24%, white));
+  border: 1px solid color-mix(in srgb, var(--primary) 35%, transparent);
+  font-weight: 700;
+  color: var(--primary-strong);
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--shadow) 65%, transparent);
+}
+
+.nav__beta:hover,
+.nav__beta:focus-visible {
+  color: var(--primary-strong);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 32px color-mix(in srgb, var(--shadow) 75%, transparent);
+}
+
+.nav__beta:focus-visible {
+  outline: 2px solid var(--outline);
+  outline-offset: 4px;
+}
+
 .nav__cta {
   align-self: flex-start;
 }
@@ -297,6 +323,13 @@ textarea {
   place-items: center;
   font-size: 1.3rem;
   cursor: pointer;
+  position: relative;
+}
+
+.nav__close::before {
+  content: "×";
+  font-weight: 700;
+  line-height: 1;
 }
 
 .nav__toggle {
@@ -442,7 +475,7 @@ textarea {
   position: absolute;
   inset: 0;
   background: url("../asset/20230829_105017 - Copie (2).jpg") center/cover no-repeat;
-  filter: blur(2px) saturate(1.05);
+  filter: blur(0px) saturate(1.05);
   transform: scale(1.02);
   z-index: -2;
 }
@@ -565,7 +598,7 @@ textarea {
 }
 
 .values {
-  padding: 4rem 0;
+  padding: var(--section-space) 0;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
 }
 
@@ -573,6 +606,7 @@ textarea {
 .why,
 .steps,
 .gallery,
+.listening,
 .offers,
 .pros,
 .users,
@@ -582,11 +616,25 @@ textarea {
 .faq,
 .cta,
 .contact {
-  padding: 4rem 0;
+  padding: var(--section-space) 0;
+}
+
+.pitch {
+  padding-bottom: 0;
 }
 
 .forms {
   background: radial-gradient(circle at 24% 18%, color-mix(in srgb, var(--glow-a) 100%, transparent), transparent 32%), radial-gradient(circle at 82% 10%, color-mix(in srgb, var(--glow-b) 100%, transparent), transparent 28%);
+}
+
+.offers-details {
+  padding: var(--section-space) 0;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.14), transparent 32%),
+    radial-gradient(circle at 82% 25%, rgba(255, 255, 255, 0.12), transparent 30%),
+    var(--cta-bg);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .forms__grid {
@@ -676,18 +724,39 @@ textarea {
 }
 
 .why__grid {
+  display: grid;
+  gap: 3rem;
+  justify-items: center;
   align-items: start;
+}
+
+.why__intro {
+  text-align: center;
+  display: grid;
+  gap: 1.5rem;
+  justify-items: center;
 }
 
 .why__points {
   display: grid;
-  gap: 1.5rem;
+  gap: 1rem;
+  width: 100%;
+}
+
+.why__points .card {
+  height: 100%;
+}
+
+.why__points .conclusion {
+  text-align: center;
 }
 
 .conclusion {
   font-weight: 700;
   color: var(--primary);
   margin-top: 0.75rem;
+  font-size: 1.16rem;
+  margin-bottom: 0.15rem;
 }
 
 .steps__grid .card {
@@ -703,6 +772,17 @@ textarea {
 
 .offers__grid ul {
   list-style: disc;
+}
+
+@media (min-width: 768px) {
+  .why__points {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .why__points .conclusion {
+    grid-column: 1/-1;
+  }
 }
 
 .pros__grid,
@@ -798,7 +878,7 @@ textarea {
 }
 
 .offers-summary {
-  padding: 4rem 0;
+  padding: var(--section-space) 0;
   background: radial-gradient(circle at 16% 12%, color-mix(in srgb, var(--glow-a) 70%, transparent), transparent 32%), radial-gradient(circle at 86% 18%, color-mix(in srgb, var(--glow-b) 70%, transparent), transparent 30%), linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.92));
 }
 
@@ -1000,6 +1080,30 @@ textarea {
 .cta__form .btn {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+}
+
+.offers-details__list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .offers-details__list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+.offer-detail {
+  display: grid;
+  gap: 0.6rem;
+  align-content: start;
+}
+
+.offer-detail p {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.55;
 }
 
 .socials {
