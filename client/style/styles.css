@@ -573,6 +573,7 @@ textarea {
 .why,
 .steps,
 .gallery,
+.listening,
 .offers,
 .pros,
 .users,
@@ -585,12 +586,26 @@ textarea {
   padding: 4rem 0;
 }
 
+.listening {
+  padding-bottom: 5rem;
+}
+
 .pitch {
   padding-bottom: 0;
 }
 
 .forms {
   background: radial-gradient(circle at 24% 18%, color-mix(in srgb, var(--glow-a) 100%, transparent), transparent 32%), radial-gradient(circle at 82% 10%, color-mix(in srgb, var(--glow-b) 100%, transparent), transparent 28%);
+}
+
+.offers-details {
+  padding: 5rem 0 4rem;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.14), transparent 32%),
+    radial-gradient(circle at 82% 25%, rgba(255, 255, 255, 0.12), transparent 30%),
+    var(--cta-bg);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .forms__grid {
@@ -1034,6 +1049,30 @@ textarea {
 .cta__form .btn {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+}
+
+.offers-details__list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .offers-details__list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+.offer-detail {
+  display: grid;
+  gap: 0.6rem;
+  align-content: start;
+}
+
+.offer-detail p {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.55;
 }
 
 .socials {

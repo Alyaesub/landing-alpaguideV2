@@ -600,6 +600,40 @@ textarea {
   list-style: disc;
 }
 
+.offers-details {
+  padding: 5rem 0 4rem;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.15), transparent 32%),
+    radial-gradient(circle at 82% 25%, rgba(255, 255, 255, 0.12), transparent 30%),
+    linear-gradient(135deg, rgba(43, 108, 176, 0.2), rgba(46, 125, 50, 0.25));
+  border-top: 1px solid rgba(31, 43, 47, 0.08);
+  border-bottom: 1px solid rgba(31, 43, 47, 0.08);
+}
+
+.offers-details__list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .offers-details__list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+.offer-detail {
+  display: grid;
+  gap: 0.6rem;
+  align-content: start;
+}
+
+.offer-detail p {
+  margin: 0;
+  color: #1f2b2f;
+  line-height: 1.55;
+}
+
 .pros {
   padding: 4rem 0;
 }
