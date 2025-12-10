@@ -627,6 +627,20 @@ textarea {
   background: radial-gradient(circle at 24% 18%, color-mix(in srgb, var(--glow-a) 100%, transparent), transparent 32%), radial-gradient(circle at 82% 10%, color-mix(in srgb, var(--glow-b) 100%, transparent), transparent 28%);
 }
 
+.users {
+  position: relative;
+}
+
+.users::after {
+  content: "";
+  display: block;
+  width: 100%;
+  max-width: 1100px;
+  height: 1px;
+  margin: 2.5rem auto 0;
+  background: linear-gradient(90deg, transparent, rgba(31, 43, 47, 0.16), transparent);
+}
+
 .offers-details {
   padding: var(--section-space) 0;
   background:
@@ -634,7 +648,6 @@ textarea {
     radial-gradient(circle at 82% 25%, rgba(255, 255, 255, 0.12), transparent 30%),
     var(--cta-bg);
   border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
 }
 
 .forms__grid {
@@ -642,7 +655,15 @@ textarea {
   gap: 2rem;
 }
 
-.offers,
+.offers {
+  background:
+    radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.14), transparent 32%),
+    radial-gradient(circle at 82% 25%, rgba(255, 255, 255, 0.12), transparent 30%),
+    var(--cta-bg);
+  border-top: 0;
+  border-bottom: 1px solid var(--border);
+}
+
 .beta {
   background: radial-gradient(circle at 30% 20%, var(--glow-a), transparent 35%), radial-gradient(circle at 80% 40%, var(--glow-b), transparent 35%);
 }
@@ -772,6 +793,18 @@ textarea {
 
 .offers__grid ul {
   list-style: disc;
+}
+
+.section-separator {
+  height: 1px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 1.75rem auto;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+}
+
+.section-separator--offers {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
 }
 
 @media (min-width: 768px) {
@@ -1067,19 +1100,24 @@ textarea {
   }
 }
 .cta__form {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   gap: 0.75rem;
-  grid-template-columns: 1fr auto;
+  justify-content: center;
+  align-items: center;
+  max-width: 640px;
+  margin: 0 auto;
+  width: 100%;
+  justify-self: center;
 }
 
 .cta__form input {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+  flex: 1 1 260px;
+  text-align: center;
 }
 
 .cta__form .btn {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  flex: 0 0 auto;
 }
 
 .offers-details__list {
@@ -1088,6 +1126,21 @@ textarea {
 }
 
 @media (min-width: 768px) {
+  .cta__form {
+    flex-wrap: nowrap;
+  }
+
+  .cta__form input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .cta__form .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    height: 100%;
+  }
+
   .offers-details__list {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;

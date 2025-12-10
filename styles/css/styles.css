@@ -537,7 +537,7 @@ textarea {
 }
 
 .why {
-  padding: 4rem 0;
+  padding: 4rem 0 2rem;
 }
 
 .why__grid {
@@ -593,7 +593,12 @@ textarea {
 
 .offers {
   padding: 4rem 0;
-  background: radial-gradient(circle at 30% 20%, rgba(60, 86, 111, 0.12), transparent 35%), radial-gradient(circle at 80% 40%, rgba(47, 109, 74, 0.15), transparent 35%);
+  background:
+    radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.15), transparent 32%),
+    radial-gradient(circle at 82% 25%, rgba(255, 255, 255, 0.12), transparent 30%),
+    linear-gradient(135deg, rgba(43, 108, 176, 0.2), rgba(46, 125, 50, 0.25));
+  border-top: 1px solid rgba(31, 43, 47, 0.08);
+  border-bottom: 1px solid rgba(31, 43, 47, 0.08);
 }
 
 .offers__grid ul {

@@ -21,17 +21,39 @@
 }
 
 .cta__form {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   gap: $space-3;
-  grid-template-columns: 1fr auto;
+  justify-content: center;
+  align-items: center;
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+  justify-self: center;
 }
 
 .cta__form input {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+  flex: 1 1 260px;
+  text-align: center;
 }
 
 .cta__form .btn {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  flex: 0 0 auto;
+}
+
+@include respond(md) {
+  .cta__form {
+    flex-wrap: nowrap;
+  }
+
+  .cta__form input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .cta__form .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    height: 100%;
+  }
 }
