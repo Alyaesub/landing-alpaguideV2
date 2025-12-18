@@ -26,6 +26,13 @@
   border-color: rgba(31, 43, 47, 0.22);
 }
 
+.btn--outline {
+  background: rgba(255, 255, 255, 0.85);
+  color: $text;
+  border-color: rgba(47, 109, 74, 0.3);
+  box-shadow: 0 10px 24px rgba(47, 109, 74, 0.08);
+}
+
 .btn:hover,
 .btn:focus-visible {
   transform: translateY(-2px);
@@ -42,6 +49,13 @@
 .btn--secondary:focus-visible {
   background: rgba(216, 170, 90, 0.14);
   border-color: color.adjust($accent, $lightness: -5%);
+}
+
+.btn--outline:hover,
+.btn--outline:focus-visible {
+  background: rgba(47, 109, 74, 0.08);
+  border-color: color.adjust($green, $lightness: -5%);
+  color: $text;
 }
 
 .btn:focus-visible,
