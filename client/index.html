@@ -526,7 +526,7 @@
   </div>
 </section>
 
-    <section class="beta" id="beta">
+  <section class="beta" id="beta">
   <div class="container grid-1 grid-2-md beta__grid">
     <div>
       <p class="eyebrow">Bêta privée</p>
@@ -584,7 +584,7 @@
   </div>
 </section>
 
-    <section class="faq-payments" id="faq">
+  <section class="faq-payments" id="faq">
   <div class="container">
     <div class="section-heading">
       <p class="eyebrow">FAQ Paiements</p>
@@ -789,26 +789,55 @@
   </div>
 </section>
 
-    <section class="cta" id="cta-final">
-  <div class="container cta__inner">
-    <div>
-      <p class="eyebrow">Early Access</p>
-      <h2>Devenez membre fondateur</h2>
-      <p>
-        Inscrivez-vous pour obtenir un accès anticipé,
-        participer à la co-construction d’Alpaguide
-        et recevoir toutes les nouveautés en avant-première.
-      </p>
+  <section class="cta" id="cta-final">
+    <div class="container cta__inner">
+      <div>
+        <p class="eyebrow">Early Access</p>
+        <h2>Devenez membre fondateur</h2>
+        <p>
+          Inscrivez-vous pour obtenir un accès anticipé,
+          participer à la co-construction d’Alpaguide
+          et recevoir toutes les nouveautés en avant-première.
+        </p>
+      </div>
+      <form class="form cta__form" id="cta-form" novalidate>
+        <label class="sr-only" for="cta-email">E-mail</label>
+        <input id="cta-email" name="cta-email" type="email" placeholder="Votre e-mail" required>
+        <button class="btn btn--secondary" type="submit">Demander un accès</button>
+        <p class="form__feedback" aria-live="polite"></p>
+      </form>
     </div>
-    <form class="form cta__form" id="cta-form" novalidate>
-      <input type="text" name="website" style="display:none">
-      <label class="sr-only" for="cta-email">E-mail</label>
-      <input id="cta-email" name="cta-email" type="email" placeholder="Votre e-mail" required>
-      <button class="btn btn--secondary" type="submit">Demander un accès</button>
-      <p class="form__feedback" aria-live="polite"></p>
-    </form>
-  </div>
-</section>
+  </section>
+
+  <section class="prototype" id="prototype">
+    <div class="container prototype__inner">
+      <div>
+        <p class="eyebrow">Prototype</p>
+        <h2>Découvrir la maquette interactive</h2>
+        <p>
+          Alpaguide est actuellement en phase de conception.
+          Une maquette interactive est disponible pour illustrer le concept
+          et le parcours envisagé.
+        </p>
+        <p class="prototype__notice">
+          ⚠️ Prototype visuel : certaines fonctionnalités sont simulées et
+          ne reflètent pas le produit final, ni son design définitif.<br>
+          Ce prototype sert à illustrer le concept et recueillir des retours.
+        </p>
+      </div>
+
+      <div class="prototype__actions">
+        <a
+          href="https://id-preview--ea852ba7-ce35-4813-a4b9-30e64d553218.lovable.app/?__lovable_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiSzJ2U3lwVUFUaWd3RWdzYzFIcHlGM2NoSVl1MSIsInByb2plY3RfaWQiOiJlYTg1MmJhNy1jZTM1LTQ4MTMtYTRiOS0zMGU2NGQ1NTMyMTgiLCJub25jZSI6IjVmOTdiZGRjZmYxYWU1MmQxZWY4NTI3YmNkMDBlNDljIiwiaXNzIjoibG92YWJsZS1hcGkiLCJzdWIiOiJlYTg1MmJhNy1jZTM1LTQ4MTMtYTRiOS0zMGU2NGQ1NTMyMTgiLCJhdWQiOlsibG92YWJsZS1hcHAiXSwiZXhwIjoxNzY2Njg2MTUwLCJuYmYiOjE3NjYwODEzNTAsImlhdCI6MTc2NjA4MTM1MH0.jgv7f6NOPchGhmm69fWPALxIJv7uoRLOTNbeSnZR-Ag"
+          class="btn btn--outline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Voir le prototype
+        </a>
+      </div>
+    </div>
+  </section>
 
 
       <section class="contact" id="contact">
@@ -867,7 +896,7 @@
     🎨
   </button>
 
-  <footer class="footer">
+<footer class="footer">
   <div class="container footer__inner">
     <div class="footer__brand">
       <span class="footer__logo">Alpaguide</span>
