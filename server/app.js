@@ -8,6 +8,7 @@ dotenv.config();
 
 // Import des routes
 const app = express();
+app.set("trust proxy", 1);
 const contactRoutes = require("./routes/contact.routes");
 const { contactLimiter } = require("./middlewares/rateLimit");
 const logger = require("./middlewares/logger");
