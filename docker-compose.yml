@@ -1,0 +1,22 @@
+# Compose de TEST LOCAL 
+# Le front est servi à part (Live Server / npx serve) et appelle l'API en direct
+# sur http://localhost:4000, comme prévu dans ton forms.js.
+
+services:
+  api:
+    build: ./server
+    container_name: alpaguide-api
+    restart: unless-stopped
+    env_file:
+      - ./server/.env
+    environment:
+      - NODE_ENV=production
+      - PORT=4000
+    # Bindé sur la loopback uniquement : joignable depuis ta machine, pas exposé au réseau
+    ports:
+      - "127.0.0.1:4000:4000"
+    volumes:
+      - api-logs:/app/logs
+
+volumes:
+  api-logs:
