@@ -1,0 +1,21 @@
+# Compose de PRODUCTION — API Alpaguide
+# L'image est construite et poussée par GitHub Actions (GHCR), PAS buildée ici.
+# Le front (client/) est servi séparément par Nginx, il n'est pas dans ce compose.
+
+services:
+  api:
+    image: ghcr.io/alyaesub/alpaguide-api:latest
+    container_name: alpaguide-api
+    restart: unless-stopped
+    env_file:
+      - ./server/.env
+    environment:
+      - NODE_ENV=production
+      - PORT=4000
+    ports:
+      - "127.0.0.1:4000:4000"
+    volumes:
+      - api-logs:/app/logs
+
+volumes:
+  api-logs:

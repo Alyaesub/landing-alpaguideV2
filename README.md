@@ -1,149 +1,145 @@
-# 🌄 Alpaguide – Landing Page Technique
+# Alpaguide — Landing page & API
 
-Landing page officielle du projet **Alpaguide**, conçue pour présenter l’application, collecter les premiers utilisateurs et préparer le futur MVP.  
-Ce README décrit **la stack technique**, **la structure**, **les optimisations SEO**, **le système de mailing**, et **un résumé clair du projet Alpaguide**.
+Landing page de présentation du projet **Alpaguide** et son API de contact / mailing.
+Monorepo : un front statique (`client/`) et une API Node.js / Express (`server/`), conteneurisée et déployée en continu sur un VPS.
 
----
+> **Alpaguide** met en relation guides, accompagnateurs et professionnels de l'outdoor avec des utilisateurs selon leurs valeurs, leur territoire et leur niveau. Cette landing sert de vitrine produit et d'outil de pré-validation (collecte de bêta-testeurs).
 
-## 📌 Résumé du projet
+## Sommaire
 
-**Alpaguide** est une future plateforme qui met en relation **guides, accompagnateurs, moniteurs et pros outdoor** avec des utilisateurs **selon leurs valeurs, leur territoire, leur niveau et leur style d’accompagnement**.
+- [Architecture](#architecture)
+- [Stack technique](#stack-technique)
+- [Structure du projet](#structure-du-projet)
+- [Développement local](#développement-local)
+- [Variables d'environnement](#variables-denvironnement)
+- [API](#api)
+- [Déploiement (CI/CD)](#déploiement-cicd)
+- [Sécurité](#sécurité)
 
-Objectifs :
+## Architecture
 
--   Remettre **l'humain**, le **local** et la **transparence** au centre.
--   Permettre aux pros de choisir leur modèle : Freemium, Abonnement ou Commission+Wallet.
--   Offrir une expérience simple, claire et directe sans algorithmes opaques.
+Deux composants servis séparément derrière Nginx :
 
----
+```
+VPS Hostinger — Nginx (reverse proxy) + SSL Let's Encrypt
+│
+├─ alpaguide.fr       →  fichiers statiques  (/srv/projects/lp-alpaguide/client)
+└─ api.alpaguide.fr   →  reverse proxy → conteneur « alpaguide-api » (127.0.0.1:4000)
+```
 
-## 🧱 Stack Technique
+- **Front (`client/`)** : fichiers statiques servis directement par Nginx.
+- **API (`server/`)** : conteneur Docker (Node 22 Alpine, utilisateur non-root), joignable uniquement sur la loopback et exposé via le reverse proxy.
 
-### **Front-end**
+## Stack technique
 
--   **HTML5**
--   **CSS / SCSS** entièrement custom
--   **JavaScript Vanilla ES6**
--   **Responsive mobile-first**
--   Lazy-loading natif (`loading="lazy"`)
--   Icons premium (SVG optimisés)
--   Thèmes dynamiques via JS (`theme-switcher`)
+| Couche | Technologies |
+|---|---|
+| Front | HTML5, CSS / SCSS custom, JavaScript Vanilla (ES6), responsive mobile-first |
+| API | Node.js 22, Express 5, Nodemailer |
+| Sécurité API | Helmet, CORS, express-rate-limit, validator, sanitization anti-XSS (middleware custom) |
+| Conteneurisation | Docker (image Alpine non-root), Docker Compose |
+| Infra | VPS Hostinger (Linux), Nginx, SSL Let's Encrypt (Certbot) |
+| CI/CD | GitHub Actions → GHCR → déploiement VPS |
 
-### **Back-end (en cours / à venir)**
+## Structure du projet
 
--   **Node.js + Express**
--   Middleware custom pour :
-    -   validation des formulaires
-    -   anti-bots (honeypot)
-    -   logging serveur
--   Service d’envoi de mail (SMTP ou API tierce)
--   Sécurisation :
-    -   Rate limiting
-    -   Nettoyage du payload (XSS)
-    -   Headers sécurisés (helmet)
+```
+landing-alpaguideV2/
+├── client/                      # Front statique (servi par Nginx)
+│   ├── index.html
+│   ├── 404.html / cgu-cgv.html / mentions.html
+│   ├── asset/                   # images, og.jpg
+│   ├── style/                   # CSS / SCSS
+│   └── js/                      # app.js, modules/, utils/
+├── server/                      # API Express
+│   ├── app.js                   # point d'entrée
+│   ├── routes/                  # contact.routes.js
+│   ├── controllers/             # contact.controller.js
+│   ├── middlewares/             # validate, rateLimit, logger, sanitize
+│   ├── Dockerfile
+│   └── package.json
+├── docker-compose.yml           # compose de TEST LOCAL (build local de l'API)
+├── compose.prod.yml             # compose de PROD (image GHCR) — utilisé par la CI
+├── sitemap.xml / robots.txt
+└── .github/workflows/deploy.yml # pipeline CI/CD
+```
 
-### **Hébergement**
+## Développement local
 
--   VPS **Hostinger** (Linux)
--   Serveur **Nginx** en reverse-proxy
--   SSL via Let’s Encrypt
--   Déploiement Git + CI/CD léger
+**Prérequis :** Node.js ≥ 22 (Docker optionnel pour l'API).
 
----
+### API
 
-## 🌐 SEO & Performance
+```bash
+cd server
+# créer server/.env (voir Variables d'environnement)
+npm install
+npm run dev          # nodemon — écoute sur http://localhost:4000
+```
 
-La landing est optimisée pour une mise en production propre et indexable par Google.
+Alternative via Docker (compose de test local) :
 
-### 🔍 SEO Inclus
+```bash
+docker compose up -d --build   # build + lance l'API sur 127.0.0.1:4000
+```
 
--   Balises `<title>` + `<meta name="description">` optimisées
--   **OpenGraph complet**
--   **Twitter Cards**
--   Fichier **sitemap.xml** généré
--   Fichier **robots.txt**
--   Balise canonical (`<link rel="canonical">`)
--   Hierarchie H1 → H2 → H3 optimisée
--   Keywords pertinents (montagne, guides, AMM, randonnée…)
--   Texte naturel et orienté intention utilisateur
+### Front
 
-### ⚡ Performance
+```bash
+cd client
+npx serve            # ou l'extension Live Server
+```
 
--   Lazy loading d’images
--   Images compressées / optimisées
--   SVG inline pour réduire les requêtes
--   CSS unique pour limiter les requêtes HTTP
--   Utilisation des attributs ARIA
+En local, le front appelle l'API sur `http://localhost:4000`.
 
----
+## Variables d'environnement
 
-## ✉️ Mailing (Back-end)
+À renseigner dans `server/.env` (jamais commité) :
 
-Un système de mailing est prévu pour gérer :
+| Variable | Description |
+|---|---|
+| `PORT` | Port d'écoute de l'API (défaut : 4000) |
+| `EMAIL_HOST` | Hôte SMTP |
+| `EMAIL_PORT` | Port SMTP |
+| `EMAIL_SECURE` | `true` / `false` (TLS) |
+| `EMAIL_USER` | Identifiant SMTP |
+| `EMAIL_PASS` | Mot de passe SMTP |
+| `TARGET_EMAIL` | Adresse de réception des messages |
 
-### **Formulaire bêta :**
+## API
 
--   Prénom / Nom
--   Email
--   Type de profil
--   Message optionnel
+Base : `/api`
 
-### **Fonctionnement technique (à venir) :**
+| Méthode | Endpoint | Description | Protection |
+|---|---|---|---|
+| GET | `/api/ping` | Healthcheck | — |
+| POST | `/api/contact/beta` | Inscription bêta | rate-limit · `validateBeta` · sanitize |
+| POST | `/api/contact/cta` | Formulaire CTA | rate-limit · `validateCta` · sanitize |
+| GET | `/api/contact/test` | Endpoint de test | — |
 
--   Endpoint `/api/beta`
--   Validation du schéma via `Joi` ou validator custom
--   Envoi mail via :
-    -   NodeMailer en direct
--   Enregistrement dans un fichier JSON ou base de données
--   Protection :
-    -   Honeypot
-    -   Limite de fréquence par IP
-    -   Nettoyage anti-XSS
--   Réponse JSON `{ success: true }`
+Les réponses sont au format JSON. Les envois de mail passent par Nodemailer (SMTP).
 
----
+## Déploiement (CI/CD)
 
-## 🤝 Objectif de la Landing
+Déploiement continu via **GitHub Actions** à chaque `push` sur `main` (`.github/workflows/deploy.yml`) :
 
-Cette landing a été créée pour :
+1. **build-and-push** — build de l'image API depuis `server/` → push sur **GHCR** (`ghcr.io/alyaesub/alpaguide-api`, tags `latest` + SHA du commit).
+2. **deploy** —
+   - synchronisation du front `client/` vers le webroot Nginx du VPS ;
+   - envoi de `compose.prod.yml` ;
+   - `docker compose -f compose.prod.yml pull && up -d` (bascule de l'API sur la nouvelle image).
 
--   présenter clairement Alpaguide
--   rassurer pros & utilisateurs
--   expliquer les 3 modèles économiques
--   montrer la vision et les valeurs
--   collecter :
-    -   bêta testeurs
-    -   avis
-    -   questionnaires pros + utilisateurs
+Le `.env` de production reste sur le VPS et n'est jamais commité. Rollback possible via les images taguées par SHA.
 
-Elle sert de **vitrine**, d’outil de **prévalidation produit**, et de **point d’entrée SEO** avant le MVP.
+> Au quotidien : **`git push` sur `main` = déploiement**.
 
----
+## Sécurité
 
-## 🚀 Roadmap
+- API en conteneur **non-root** (user `node`), image Alpine à surface d'attaque réduite, port bindé sur la **loopback** (`127.0.0.1:4000`) — jamais exposé directement sur Internet.
+- **Helmet** (headers HTTP sécurisés), **CORS**, **rate limiting** sur `/api/contact`, **validation** des entrées et **sanitization anti-XSS** des payloads.
+- Secrets hors du dépôt (`.env` sur le VPS uniquement), déploiement via une **clé SSH dédiée**.
+- HTTPS via Let's Encrypt.
 
-### ✔️ Fait
+## Auteur
 
--   Structure HTML
--   Rédaction optimisée
--   SCSS complet
--   SEO avancé
--   FAQ Pros, FAQ Users, FAQ Wallet
--   Page Mentions légales + Politique de confidentialité
-
-### 🔜 À venir
-
--   Système complet de mailing
--   Tracking analytics (Plausible)
--   Cookie banner RGPD
--   Mini API Express pour formulaire bêta
--   Déploiement final sur Hostinger
-
----
-
-## 📬 Contact
-
-**Email officiel :**  
-📧 alpaguide.contact@gmail.com
-
----
+**Pascal Reynier** — projet personnel.
