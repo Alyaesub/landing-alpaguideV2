@@ -1,0 +1,83 @@
+name: Deploy Alpaguide
+
+on:
+    push:
+        branches: [main]
+    workflow_dispatch:
+
+env:
+    IMAGE: ghcr.io/alyaesub/alpaguide-api
+
+jobs:
+    # ---------- 1) BUILD + PUSH de l'image API sur GHCR ----------
+    build-and-push:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            packages: write
+        steps:
+            - uses: actions/checkout@v4
+            - name: Login GHCR
+              uses: docker/login-action@v3
+              with:
+                  registry: ghcr.io
+                  username: ${{ github.actor }}
+                  password: ${{ secrets.GITHUB_TOKEN }}
+            - name: Build & push (API)
+              uses: docker/build-push-action@v6
+              with:
+                  context: ./server
+                  push: true
+                  tags: |
+                      ${{ env.IMAGE }}:latest
+                      ${{ env.IMAGE }}:${{ github.sha }}
+
+    # ---------- 2) DÉPLOIEMENT (front + API) ----------
+    deploy:
+        needs: build-and-push
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+
+            # --- Front statique -> webroot Nginx ---
+            - name: Déploiement du front (client/)
+              uses: appleboy/scp-action@v0.1.7
+              with:
+                  host: ${{ secrets.VPS_HOST }}
+                  username: ${{ secrets.VPS_USER }}
+                  port: ${{ secrets.VPS_PORT }}
+                  key: ${{ secrets.VPS_SSH_KEY }}
+                  source: "client"
+                  target: /srv/projects/lp-alpaguide
+                  overwrite: true
+
+            # --- compose de prod -> VPS ---
+            - name: Envoi du compose.prod.yml
+              uses: appleboy/scp-action@v0.1.7
+              with:
+                  host: ${{ secrets.VPS_HOST }}
+                  username: ${{ secrets.VPS_USER }}
+                  port: ${{ secrets.VPS_PORT }}
+                  key: ${{ secrets.VPS_SSH_KEY }}
+                  source: compose.prod.yml
+                  target: /srv/projects/lp-alpaguide
+
+            # --- API -> pull image + redémarrage ---
+            - name: Déploiement de l'API
+              uses: appleboy/ssh-action@v1.2.0
+              with:
+                  host: ${{ secrets.VPS_HOST }}
+                  username: ${{ secrets.VPS_USER }}
+                  port: ${{ secrets.VPS_PORT }}
+                  key: ${{ secrets.VPS_SSH_KEY }}
+                  envs: GHCR_TOKEN,GHCR_USER
+                  script: |
+                      cd /srv/projects/lp-alpaguide
+                      echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GHCR_USER" --password-stdin
+                      docker compose -f compose.prod.yml pull
+                      docker compose -f compose.prod.yml up -d
+                      docker logout ghcr.io
+                      docker image prune -f
+              env:
+                  GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  GHCR_USER: ${{ github.actor }}
